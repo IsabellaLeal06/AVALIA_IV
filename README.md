@@ -198,42 +198,28 @@ Entre os principais documentos estão:
 A documentação acadêmica segue as orientações estabelecidas no Manual do PIM IV, incluindo as etapas de caracterização da organização, planejamento da solução, desenvolvimento, arquitetura, banco de dados, infraestrutura e gerenciamento ágil.
 
 ---
-
-## 👥 Equipe
-
-<table align="center">
-  <tr>
-    <td align="center">
-      <img src="./docs/assets/Gabriel.jpeg" width="120px" style="border-radius: 50%;" alt="Gabriel"/><br/>
-      <b>Gabriel Vinicius Rosa Pereira</b><br/>
-      Product Owner · Frontend · Integração<br/>
-      <sub>HTML · CSS · JavaScript · Kotlin</sub>
-      <a href="https://github.com/GabrielVRosa">GitHub</a> · <a href="https://www.linkedin.com/in/gabriel-vinicius-6a6059352/">LinkedIn</a>
-    </td>
-
-```
-<td align="center">
-  <img src="./docs/assets/Isabella.jpeg" width="120px" style="border-radius: 50%;" alt="Isabella"/><br/>
-  <b>Isabella Santos Leal</b><br/>
-  Scrum Master · Banco de Dados · Documentação<br/>
-  <sub>SQL Server · GitHub · Figma</sub><br/><br/>
-  <a href="https://github.com/IsabellaLeal06">GitHub</a> · <a href="https://www.linkedin.com/in/isabella-santos-1148b02b9/">LinkedIn</a>
-</td>
-
-<td align="center">
-  <img src="./docs/assets/Leticia.jpeg" width="120px" style="border-radius: 50%;" alt="Letícia"/><br/>
-  <b>Letícia Aparecida Santos Mota</b><br/>
-  Desenvolvedora Backend · UML<br/>
-  <sub>C# · API · Diagramas UML</sub><br/><br/>
-  <a href="https://github.com/Jmclemota">GitHub</a> · <a href="https://www.linkedin.com/in/let%C3%ADcia-aparecida-a465b7313/">LinkedIn</a>
-</td>
-```
-
-  </tr>
-</table>
-
 ---
 
-<p align="center">
-  Desenvolvido com 💙 pela equipe Avalia+ · PIM IV · UNIP 2026-2
-</p>
+## 👥 Equipe
+<table align="center">
+  <tr>
+    <td align="center"> 
+      <b>Gabriel Vinicius Rosa Pereira</b><br/>
+      Product Owner · Frontend · Integração<br/>
+      <sub>HTML · CSS · JavaScript · Kotlin</sub><br/><br/>
+      <a href="https://github.com/GabrielVRosa">GitHub</a> · <a href="https://www.linkedin.com/in/gabriel-vinicius-6a6059352/">LinkedIn</a>
+    </td>
+    <td align="center">
+      <b>Isabella Santos Leal</b><br/>
+      Scrum Master · Banco de Dados · Documentação<br/>
+      <sub>SQL Server · GitHub · Figma</sub><br/><br/>
+      <a href="https://github.com/IsabellaLeal06">GitHub</a> · <a href="https://www.linkedin.com/in/isabella-santos-1148b02b9/">LinkedIn</a>
+    </td>
+    <td align="center">
+      <b>Letícia Aparecida Santos Mota</b><br/>
+      Desenvolvedora Backend · UML<br/>
+      <sub>C# · API · Diagramas UML</sub><br/><br/>
+      <a href="https://github.com/Jmclemota">GitHub</a> · <a href="https://www.linkedin.com/in/let%C3%ADcia-aparecida-a465b7313/">LinkedIn</a>
+    </td>
+  </tr>
+</table>
