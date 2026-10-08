@@ -204,18 +204,21 @@ A documentação acadêmica segue as orientações estabelecidas no Manual do PI
 <table align="center">
   <tr>
     <td align="center"> 
+     <img src="./docs/assets/Gabriel.jpeg" width="120px" style="border-radius: 50%;" alt="Gabriel"/><br/>
       <b>Gabriel Vinicius Rosa Pereira</b><br/>
       Product Owner · Frontend · Integração<br/>
       <sub>HTML · CSS · JavaScript · Kotlin</sub><br/><br/>
       <a href="https://github.com/GabrielVRosa">GitHub</a> · <a href="https://www.linkedin.com/in/gabriel-vinicius-6a6059352/">LinkedIn</a>
     </td>
     <td align="center">
+      <img src="./docs/assets/Isabella.jpeg" width="120px" style="border-radius: 50%;" alt="Isabella"/><br/>
       <b>Isabella Santos Leal</b><br/>
       Scrum Master · Banco de Dados · Documentação<br/>
       <sub>SQL Server · GitHub · Figma</sub><br/><br/>
       <a href="https://github.com/IsabellaLeal06">GitHub</a> · <a href="https://www.linkedin.com/in/isabella-santos-1148b02b9/">LinkedIn</a>
     </td>
     <td align="center">
+      <img src="./docs/assets/Leticia.jpeg" width="120px" style="border-radius: 50%;" alt="Letícia"/><br/>
       <b>Letícia Aparecida Santos Mota</b><br/>
       Desenvolvedora Backend · UML<br/>
       <sub>C# · API · Diagramas UML</sub><br/><br/>
