@@ -10,55 +10,55 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a revisão dos requisitos não funcionais RNF01 a RNF07.
+**O que foi concluído**
+- Revisão dos requisitos não funcionais RNF01 a RNF07.
 
-**Pontos a acompanhar**
-- Verificar consistência e clareza dos critérios não funcionais.
+**O que está em andamento**
+- Revisão das regras de negócio RN01 a RN27 (REQ03).
 
-**Próximo passo previsto**
-- Registrar ajustes necessários para validação.
+**Próximo passo**
+- Consolidar a numeração das regras de negócio.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Melhorias alinhadas com a revisão dos requisitos funcionais.
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Detalhamento do escopo de melhorias: banco de dados, API, gamificação, VLibras e aplicações Desktop e Mobile.
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Finalizar o escopo de melhorias.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Levantamento dos casos de uso afetados pelas mudanças do PIM IV.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Inclusão dos casos de uso de recuperação de senha e de cadastro de questões pelo Professor.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Revisar os casos de uso de simulado.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Numeração das regras de negócio alterada em relação às versões anteriores, exigindo conferência das citações.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Consolidar a numeração das regras de negócio.
+- [ ] Finalizar o escopo de melhorias.
+- [ ] Revisar os casos de uso de simulado.
