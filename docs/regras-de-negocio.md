@@ -20,15 +20,15 @@ O usuário pode alterar a própria senha. Os demais dados cadastrais são mantid
 
 ## RN05 – Vínculo de turma
 
-Somente contas de Aluno possuem turma. Professor e Administrador não pertencem a uma turma.
+Somente contas de Aluno possuem turma, e cada aluno pertence a no máximo uma turma por vez. Professor e Administrador não pertencem a uma turma.
 
 ## RN06 – Identificação da turma
 
-A turma é identificada por nome e ano letivo. Não podem existir duas turmas com o mesmo nome no mesmo ano.
+A turma é identificada por nome e ano letivo. O período, quando aplicável, integra o próprio nome da turma. Não podem existir duas turmas com o mesmo nome no mesmo ano letivo.
 
 ## RN07 – Responsabilidade pela disciplina
 
-Cada disciplina possui no máximo um professor responsável. Uma disciplina pode permanecer temporariamente sem responsável.
+Cada disciplina possui no máximo um professor responsável, e um professor pode responder por várias disciplinas. Uma disciplina pode permanecer temporariamente sem responsável; nesse caso continua disponível aos alunos, mas o cadastro de novas questões fica suspenso até a designação de um responsável.
 
 ## RN08 – Permissão sobre o banco de questões
 
@@ -84,31 +84,31 @@ Todos os simulados realizados são armazenados no histórico do Aluno.
 
 ## RN21 – Atribuição de pontos
 
-O sistema atribui pontos ao Aluno conforme seu desempenho nos simulados.
+Cada questão respondida corretamente vale 10 pontos. Erros e questões em branco não pontuam e não descontam. O total é cumulativo e nunca sofre redução. Professor e Administrador não acumulam pontos.
 
-## RN22 – Faixas de medalhas
+## RN22 – Faixas de medalha
 
-A pontuação acumulada do Aluno determina a faixa de medalha correspondente.
+A medalha é determinada pela pontuação acumulada: Bronze a partir de 250 pontos, Prata a partir de 1.000 e Ouro a partir de 2.500. A medalha não é armazenada no cadastro do aluno: é apurada no momento da consulta, comparando a pontuação com as faixas mantidas em tabela própria no banco de dados.
 
-## RN23 – Atualização da pontuação
+## RN23 – Exibição da medalha
 
-A pontuação acumulada é atualizada após a correção do simulado.
+O perfil do aluno exibe a medalha corrente e informa quantos pontos faltam para a próxima faixa. Quem ainda não alcançou a primeira faixa visualiza a medalha Bronze em versão acinzentada; quem alcançou o Ouro visualiza mensagem de nível máximo. Não há barra de progresso.
 
-## RN24 – Visibilidade por perfil
+## RN24 – Visibilidade de dados por perfil
 
-Cada perfil acessa somente os dados e funcionalidades permitidos para sua função no sistema.
+O Aluno acessa apenas os próprios dados. O Professor acessa apenas os dados das suas turmas, em formato consolidado (média de acertos por disciplina e quantidade de simulados), sem as respostas questão a questão. O Administrador não acessa dados de desempenho. A verificação ocorre no servidor, a cada consulta.
 
 ## RN25 – Alunos desativados nos indicadores
 
 Alunos com conta desativada permanecem com seu histórico armazenado, mas ficam fora dos cálculos de médias correntes das turmas.
 
-## RN26 – Distribuição das plataformas
+## RN26 – Escopo de telas por plataforma
 
-A disponibilidade das telas segue o escopo definido para Web, Desktop e Mobile. Essa distribuição não representa bloqueio de autenticação por plataforma.
+A aplicação Web contempla as telas dos três perfis, a Desktop as telas de cadastro e edição do Administrador e o Mobile as telas do Aluno. Trata-se de delimitação de escopo de desenvolvimento, e não de restrição de segurança: não há bloqueio de autenticação por plataforma.
 
-## RN27 – Restrições de unicidade
+## RN27 – Unicidade dos cadastros
 
-O banco deve impedir duplicidades nos dados definidos pelo projeto, incluindo e-mail e CPF de usuário, nome de disciplina, combinação nome/ano de turma, nome e pontuação mínima de medalha e letra de alternativa dentro da mesma questão.
+O banco deve impedir duplicidade de: e-mail do usuário, CPF do usuário, nome da disciplina, nome da turma no mesmo ano letivo, nome da medalha, pontuação mínima da medalha e letra da alternativa dentro da mesma questão.
 
 ## Observação
 
