@@ -10,55 +10,55 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a conferência dos requisitos funcionais RF01 a RF07.
+**O que foi concluído**
+- Revisão dos requisitos funcionais RF01 a RF07.
 
-**Pontos a acompanhar**
-- Identificar pontos que precisam de confirmação no escopo do PIM IV.
+**O que está em andamento**
+- Revisão dos requisitos não funcionais RNF01 a RNF07 (REQ02).
 
-**Próximo passo previsto**
-- Consolidar as observações depois da revisão.
+**Próximo passo**
+- Iniciar a revisão das regras de negócio.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Lista inicial das funcionalidades novas do PIM IV.
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Definição do escopo de melhorias (REQ06).
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Validar as melhorias com os requisitos em revisão.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Mapeamento dos atores Aluno, Professor e Administrador.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Levantamento dos casos de uso afetados pelas mudanças do PIM IV.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Incluir os casos de uso novos.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Nenhum impedimento registrado.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Iniciar a revisão das regras de negócio.
+- [ ] Validar as melhorias com os requisitos em revisão.
+- [ ] Incluir os casos de uso novos.
