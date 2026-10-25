@@ -10,55 +10,55 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar o alinhamento do escopo de melhorias do PIM III para o PIM IV e das telas por plataforma.
+**O que foi concluído**
+- Levantamento das divergências entre requisitos e MER, incluindo a explicação da resposta tratada como opcional nos requisitos e obrigatória no modelo.
 
-**Pontos a acompanhar**
-- Separar as funcionalidades previstas para web, mobile e desktop.
+**O que está em andamento**
+- Registro das decisões do REQ08 e padronização do repositório GitHub (INF01).
 
-**Próximo passo previsto**
-- Confirmar o escopo e registrar decisões aprovadas.
+**Próximo passo**
+- Finalizar a estrutura de pastas e o padrão de commits.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Levantamento das telas do protótipo que precisarão de ajuste.
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Revisão final do escopo de telas por plataforma (REQ07).
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Apresentar o escopo à equipe.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Revisão dos casos de uso do Administrador.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Conferência do diagrama de casos de uso contra as regras de negócio v2.2.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Corrigir as divergências encontradas.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Nenhum impedimento registrado.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Finalizar a estrutura de pastas e o padrão de commits.
+- [ ] Apresentar o escopo à equipe.
+- [ ] Corrigir as divergências encontradas.
