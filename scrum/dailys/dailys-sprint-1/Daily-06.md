@@ -10,55 +10,55 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a matriz de rastreabilidade dos requisitos com as etapas do manual do PIM IV.
+**O que foi concluído**
+- Matriz de rastreabilidade requisitos × etapas do manual.
 
-**Pontos a acompanhar**
-- Mapear quais requisitos e entregas apoiam cada etapa.
+**O que está em andamento**
+- Alinhamento entre requisitos e MER (REQ08), com levantamento das divergências.
 
-**Próximo passo previsto**
-- Revisar o mapeamento com a equipe.
+**Próximo passo**
+- Definir a obrigatoriedade da explicação da resposta.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Distribuição de telas validada conforme a RN26.
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Conferência das telas do protótipo web do PIM III frente ao novo escopo.
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Registrar as telas que precisarão de ajuste.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Inclusão dos casos de uso de pontuação, medalhas e desempenho.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Revisão dos casos de uso do Administrador, incluindo desativação e reativação de cadastros.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Conferir o diagrama contra as regras de negócio v2.2.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Divergência entre requisitos e MER quanto à obrigatoriedade da explicação da resposta, pendente de decisão da equipe.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Definir a obrigatoriedade da explicação da resposta.
+- [ ] Registrar as telas que precisarão de ajuste.
+- [ ] Conferir o diagrama contra as regras de negócio v2.2.
