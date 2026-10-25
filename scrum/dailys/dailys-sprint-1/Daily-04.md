@@ -10,55 +10,55 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a revisão das regras de negócio RN01 a RN27.
+**O que foi concluído**
+- Revisão das regras de negócio RN01 a RN27, com a numeração consolidada.
 
-**Pontos a acompanhar**
-- Identificar regras que exigem alinhamento com os requisitos e o modelo de dados.
+**O que está em andamento**
+- Elaboração da matriz de rastreabilidade RF × RN (REQ04).
 
-**Próximo passo previsto**
-- Preparar a lista de dúvidas e divergências.
+**Próximo passo**
+- Iniciar a matriz de requisitos × etapas do manual.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Escopo de melhorias do PIM IV definido (REQ06).
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Definição do escopo de telas por plataforma (REQ07).
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Distribuir as telas por perfil e plataforma.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Inclusão dos casos de uso de recuperação de senha e de cadastro de questões pelo Professor.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Revisão dos casos de uso de geração, realização e correção de simulados.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Incluir os casos de uso de gamificação.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Nenhum impedimento registrado.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Iniciar a matriz de requisitos × etapas do manual.
+- [ ] Distribuir as telas por perfil e plataforma.
+- [ ] Incluir os casos de uso de gamificação.
