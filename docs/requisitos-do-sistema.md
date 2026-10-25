@@ -62,33 +62,57 @@ O sistema deve atribuir pontos aos Alunos conforme seus resultados e relacionar 
 
 ## 2. Requisitos Não Funcionais
 
-### RNF01 – Segurança das credenciais
+### RNF01 – Segurança e controle de acesso
 
-As senhas não devem ser armazenadas em texto legível. O sistema deve utilizar hash e controle de sessão por token.
+O sistema deve garantir que cada usuário acesse exclusivamente as funcionalidades e os dados correspondentes ao seu perfil.
 
-### RNF02 – Controle de acesso
+As senhas são armazenadas com algoritmo de hash, a autenticação ocorre por token com prazo de expiração e a autorização é verificada no servidor a cada operação. A comunicação entre as aplicações e o servidor ocorre sobre HTTPS, as consultas ao banco são parametrizadas e os códigos de recuperação de senha são aleatórios, de uso único e com prazo de validade.
 
-As permissões devem ser verificadas no servidor, não apenas pela interface.
+Alinhado às práticas de controle de acesso da ISO/IEC 27001.
+
+### RNF02 – Proteção de dados e conformidade com a LGPD
+
+O sistema deve tratar os dados pessoais em conformidade com a Lei Geral de Proteção de Dados.
+
+A coleta limita-se aos dados necessários à finalidade educacional. O CPF é tratado como dado pessoal e não é exibido em listagens ou relatórios. Os dados de desempenho são acessíveis somente a quem possui vínculo pedagógico legítimo com o aluno, e as mensagens de erro não expõem informações internas do sistema.
+
+Conforme a Lei n. 13.709/2018.
 
 ### RNF03 – Integridade dos dados
 
-O banco deve utilizar chaves, restrições de domínio, unicidade e mecanismos necessários para preservar a consistência dos dados.
+O banco de dados deve assegurar a consistência das informações ao longo de todo o ciclo de vida do sistema.
 
-### RNF04 – Persistência da pontuação
+A integridade referencial é garantida por chaves estrangeiras, as operações compostas são executadas em transação e restrições de unicidade e de domínio impedem dados duplicados ou inválidos. As remoções são lógicas, e os registros de simulados tornam-se imutáveis após a correção.
 
-A pontuação acumulada do usuário deve permanecer registrada conforme definido pelo modelo de dados.
+### RNF04 – Desempenho
 
-### RNF05 – Consistência entre plataformas
+O sistema deve responder às solicitações em tempo adequado a uma utilização fluida.
 
-Web, Desktop e Mobile devem utilizar a mesma API e o mesmo banco de dados, garantindo consistência das informações.
+As consultas devem ser respondidas em até três segundos em condições normais de uso, e a geração de um simulado em até cinco segundos. As colunas de maior frequência de consulta recebem índices, e a pontuação acumulada é mantida em coluna própria, evitando o recálculo de todo o histórico a cada exibição do perfil.
 
-### RNF06 – Acessibilidade
+### RNF05 – Usabilidade e responsividade
 
-A solução deve contemplar recursos de acessibilidade, incluindo a integração do VLibras na aplicação Web.
+As interfaces devem ser claras e adequadas ao dispositivo em que são utilizadas.
 
-### RNF07 – Arquitetura e infraestrutura
+A interface web adapta-se a diferentes resoluções, o aplicativo móvel a diferentes tamanhos de dispositivo e a aplicação desktop aproveita telas amplas. O sistema oferece retorno visual imediato, validação e confirmação das operações críticas, mantendo padronização visual e de navegação entre as plataformas.
 
-A solução deve considerar arquitetura modular, integração por API e os aspectos de infraestrutura em nuvem, DevOps, segurança, desempenho e escalabilidade previstos no PIM IV.
+Alinhado à ISO 9241-11 e às heurísticas de usabilidade de Nielsen.
+
+### RNF06 – Acessibilidade e inclusão digital
+
+O sistema deve oferecer recursos que ampliem o acesso de usuários com deficiência.
+
+A aplicação web integra o VLibras para os três perfis e oferece modo de alto contraste, ajuste do tamanho da fonte, navegação por teclado, marcação semântica e textos alternativos. No aplicativo móvel, os elementos interativos recebem rótulos de acessibilidade compatíveis com os leitores de tela nativos.
+
+Alinhado às diretrizes WCAG 2.1, nível AA, e à Lei n. 10.436/2002.
+
+### RNF07 – Manutenibilidade e escalabilidade
+
+A solução deve ser organizada de modo a permitir manutenção e evolução sem reescrita estrutural.
+
+O backend é organizado em camadas, com separação entre apresentação, regra de negócio e persistência, e a regra de negócio é centralizada na API, e não replicada nas três aplicações. Parâmetros sujeitos a mudança institucional, como as faixas de medalhas, são mantidos em tabelas do banco. A arquitetura está preparada para execução em containers, admitindo escalonamento horizontal da API.
+
+Alinhado às práticas de ciclo de vida de software da ISO/IEC 12207.
 
 ## 3. Distribuição por plataforma
 
