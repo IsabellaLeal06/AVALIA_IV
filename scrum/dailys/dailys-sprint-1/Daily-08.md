@@ -10,55 +10,56 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a conferência entre requisitos e Modelo Entidade-Relacionamento, incluindo as divergências registradas.
+**O que foi concluído**
+- Decisões do alinhamento entre requisitos e MER registradas.
+- Estrutura de pastas e padrão de commits do repositório definidos.
 
-**Pontos a acompanhar**
-- Preparar os pontos que precisam ser decididos antes da modelagem.
+**O que está em andamento**
+- Consolidação do documento de requisitos e regras de negócio v2.2.
 
-**Próximo passo previsto**
-- Validar as decisões antes de atualizar os documentos derivados.
+**Próximo passo**
+- Validar a versão 2.2 com a equipe.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Escopo de telas por plataforma definido (REQ07).
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Validação do escopo junto aos requisitos v2.2.
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Preparar os itens para a Sprint Review.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Correção das divergências entre o diagrama e as regras de negócio.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Revisão final do diagrama de casos de uso.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Disponibilizar o diagrama para revisão da equipe.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Nenhum impedimento registrado.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Validar a versão 2.2 com a equipe.
+- [ ] Preparar os itens para a Sprint Review.
+- [ ] Disponibilizar o diagrama para revisão da equipe.
