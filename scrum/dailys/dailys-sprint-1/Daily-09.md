@@ -10,55 +10,56 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a padronização do repositório GitHub e a revisão do diagrama de casos de uso.
+**O que foi concluído**
+- Documento de requisitos e regras de negócio v2.2 consolidado.
+- Repositório GitHub padronizado.
 
-**Pontos a acompanhar**
-- Definir convenções de organização, versionamento e registro das alterações.
+**O que está em andamento**
+- Preparação da Sprint Review e da Retrospectiva.
 
-**Próximo passo previsto**
-- Confirmar os itens realizados e transferir pendências para a próxima sprint.
+**Próximo passo**
+- Conduzir a Sprint Review e a Retrospectiva da Sprint 01.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Validação do escopo concluída.
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Preparação da apresentação dos itens na Sprint Review.
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Apresentar o escopo do PIM IV na Sprint Review.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Diagrama de casos de uso ajustado aos requisitos v2.2 (MD08).
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Preparação da apresentação do diagrama na Sprint Review.
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Iniciar o ajuste dos diagramas de classes e de sequência na Sprint 02.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Nenhum impedimento registrado.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Conduzir a Sprint Review e a Retrospectiva da Sprint 01.
+- [ ] Apresentar o escopo do PIM IV na Sprint Review.
+- [ ] Iniciar o ajuste dos diagramas de classes e de sequência na Sprint 02.
