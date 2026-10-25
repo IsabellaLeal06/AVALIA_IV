@@ -64,13 +64,13 @@ O escopo funcional está organizado nos seguintes requisitos:
 
 O projeto também contempla requisitos relacionados a:
 
-- segurança e proteção das credenciais;
-- desempenho;
-- integridade dos dados;
-- persistência da pontuação;
-- acessibilidade;
-- compatibilidade entre as aplicações;
-- arquitetura de software.
+- **RNF01:** segurança e controle de acesso;
+- **RNF02:** proteção de dados e conformidade com a LGPD;
+- **RNF03:** integridade dos dados;
+- **RNF04:** desempenho;
+- **RNF05:** usabilidade e responsividade;
+- **RNF06:** acessibilidade e inclusão digital;
+- **RNF07:** manutenibilidade e escalabilidade.
 
 ## 6. Banco de dados
 
