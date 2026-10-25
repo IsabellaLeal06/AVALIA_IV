@@ -10,55 +10,56 @@
 
 ---
 
-> **Situação do documento:** modelo de planejamento. A Sprint 1 não foi realizada; este arquivo não representa uma reunião ocorrida nem confirma atividades concluídas. Atualize-o somente se a equipe realizar a Daily correspondente.
-
-## Planejamento da Daily
+## Atualizações da equipe
 
 ### Isabella — Scrum Master
 
-**Atividade prevista**
-- Planejar a revisão dos requisitos funcionais RF01 a RF07, não funcionais RNF01 a RNF07 e regras de negócio RN01 a RN27.
+**O que foi concluído**
+- Abertura da Sprint 01 e distribuição dos itens do Sprint Backlog.
+- Levantamento dos documentos herdados do PIM III.
 
-**Pontos a acompanhar**
-- Definir a divisão das tarefas e conferir os documentos existentes.
+**O que está em andamento**
+- Revisão dos requisitos funcionais RF01 a RF07 (REQ01).
 
-**Próximo passo previsto**
-- Registrar as decisões e as pendências após validação da equipe.
+**Próximo passo**
+- Concluir a revisão dos requisitos funcionais.
+
+---
 
 ### Gabriel — Product Owner / Front-end
 
-**Atividade prevista**
-- Alinhar o escopo do produto e as melhorias do PIM III para o PIM IV relacionadas a esta etapa.
+**O que foi concluído**
+- Leitura do Manual do PIM IV e das entregas do PIM III.
 
-**Pontos a acompanhar**
-- Confirmar as funcionalidades e as telas previstas para cada plataforma.
+**O que está em andamento**
+- Levantamento das melhorias do PIM III para o PIM IV (REQ06).
 
-**Próximo passo previsto**
-- Registrar as decisões da equipe após a realização das atividades.
+**Próximo passo**
+- Listar as funcionalidades novas do PIM IV.
+
+---
 
 ### Letícia Aparecida — Back-end
 
-**Atividade prevista**
-- Acompanhar as implicações dos requisitos e das regras de negócio para a solução.
+**O que foi concluído**
+- Análise do diagrama de casos de uso do PIM III.
 
-**Pontos a acompanhar**
-- Identificar dependências entre requisitos, diagramas e implementação futura.
+**O que está em andamento**
+- Ajuste do diagrama de casos de uso (MD08).
 
-**Próximo passo previsto**
-- Registrar dúvidas técnicas e decisões após validação.
-
+**Próximo passo**
+- Mapear os atores e casos de uso frente aos requisitos em revisão.
 
 ---
 
 ## Impedimentos
 
-- Como a sprint não foi realizada, os impedimentos reais ainda não foram registrados.
+- Necessidade de reunir os documentos do PIM III antes de iniciar as revisões.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Realizar a atividade prevista para esta etapa.
-- [ ] Registrar o que foi efetivamente concluído e o que permanece em andamento.
-- [ ] Atualizar impedimentos e próximos passos com informações reais da equipe.
-
+- [ ] Concluir a revisão dos requisitos funcionais.
+- [ ] Listar as funcionalidades novas do PIM IV.
+- [ ] Mapear os atores e casos de uso frente aos requisitos em revisão.
