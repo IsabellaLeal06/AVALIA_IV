@@ -15,8 +15,3 @@ Os arquivos de Daily desta sprint devem documentar o andamento real das atividad
 
 Os registros seguem o formato assíncrono adotado pela equipe. Consulte os arquivos desta pasta para visualizar as atualizações individuais de cada dia.
 
-## 🔗 Navegação
-
-- [Voltar ao índice geral das Dailys](../README.md)
-- [Voltar ao índice Scrum](../../README.md)
-- [Abrir a pasta Dailys da Sprint 1 no GitHub](https://github.com/IsabellaLeal06/AVALIA_IV/tree/main/scrum/dailys/dailys-sprint-1)
