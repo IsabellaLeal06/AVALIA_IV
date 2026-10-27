@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- PB09: aplicação administrativa em C# + Windows Forms (somente telas do Administrador, RN26) -->
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>Avalia.Desktop</RootNamespace>
+    <AssemblyName>AvaliaMais.Desktop</AssemblyName>
+    <ApplicationIcon>Recursos\avalia.ico</ApplicationIcon>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+    <ApplicationVisualStyles>true</ApplicationVisualStyles>
+    <ApplicationDefaultFont>Segoe UI, 9.75pt</ApplicationDefaultFont>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avalia.Desktop.Core\Avalia.Desktop.Core.csproj" />
+    <ProjectReference Include="..\Avalia.Desktop.Data\Avalia.Desktop.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Recursos\logo.png" />
+    <EmbeddedResource Include="Recursos\logo_branco.png" />
+    <EmbeddedResource Include="Recursos\avalia.ico" />
+  </ItemGroup>
+
+  <!-- Configuração: o example é versionado; o Local (com a senha) fica fora do Git -->
+  <ItemGroup>
+    <None Update="appsettings.example.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="appsettings.Local.json" Condition="Exists('appsettings.Local.json')" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

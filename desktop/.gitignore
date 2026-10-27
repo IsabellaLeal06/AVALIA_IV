@@ -1,0 +1,11 @@
+# Arquivos gerados pela compilação
+bin/
+obj/
+.vs/
+*.user
+
+# Configuração local com a senha do banco (nunca versionar)
+appsettings.Local.json
+
+# Imagens das questões enviadas durante os testes
+uploads/

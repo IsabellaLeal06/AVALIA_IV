@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Acesso direto ao Azure SQL (Dapper + Microsoft.Data.SqlClient).
+       Quando a API existir, um projeto Avalia.Desktop.Api implementará as
+       mesmas interfaces do Core via HttpClient. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Avalia.Desktop.Data</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avalia.Desktop.Core\Avalia.Desktop.Core.csproj" />
+  </ItemGroup>
+
+</Project>
