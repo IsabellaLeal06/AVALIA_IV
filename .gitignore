@@ -1,0 +1,11 @@
+# Arquivos gerados pelo Visual Studio e pela compilação
+.vs/
+bin/
+obj/
+*.user
+
+# Configuração local com a senha do banco: NUNCA enviar para o GitHub
+appsettings.Local.json
+
+# Imagens de teste salvas pela aplicação Desktop
+uploads/
