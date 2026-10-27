@@ -21,25 +21,30 @@
 
 | Categoria | Caminho |
 |---|---|
-| 📋 Requisitos e regras de negócio | [Acessar](./docs/requisitos-e-regras-de-negocio.txt) |
+| 📋 Requisitos do sistema | [Acessar](./docs/requisitos-do-sistema.md) |
+| 📌 Regras de negócio | [Acessar](./docs/regras-de-negocio.md) |
+| 📚 Escopo do projeto | [Acessar](./docs/escopo-do-projeto.md) |
+| 👥 Tipos de usuários | [Acessar](./docs/tipos-de-usuarios.md) |
 | 🗄️ Banco de dados e scripts SQL | [Acessar](./database/) |
 | 📐 Diagramas do banco de dados | [Acessar](./diagramas/banco-de-dados/) |
 | 📊 Diagramas UML | [Acessar](./diagramas/uml/) |
-| 📚 Documentação do PIM IV | [Acessar](./docs/) |
-| 📋 Product Backlog | [Acessar](./scrum/product-backlog/) |
+| 📚 Documentação | [Acessar](./docs/) |
+| 📋 Product Backlog | [Acessar](./scrum/product-backlog/product-backlog.md) |
 | 📝 Sprint Backlog | [Acessar](./scrum/sprint-backlog/) |
 | 🗓️ Sprint Planning | [Acessar](./scrum/sprint-planning/) |
 | 🔍 Sprint Review | [Acessar](./scrum/sprint-review/) |
 | 🔄 Sprint Retrospective | [Acessar](./scrum/sprint-retrospective/) |
 | 📅 Daily Scrum | [Acessar](./scrum/dailys/) |
-| 💻 Aplicação Desktop — C# / Windows Forms | [Acessar](./desktop/) |
+| 💻 Aplicação Desktop | [Acessar](./desktop/) |
 | ⚙️ Desktop Core | [Acessar](./desktop/Avalia.Desktop.Core/) |
 | 🔌 Desktop Data | [Acessar](./desktop/Avalia.Desktop.Data/) |
-| 🖥️ Interface
+| 🖥️ Interface Desktop | [Acessar](./desktop/Avalia.Desktop/) |
+| 📖 Metodologia Scrum | [Acessar](./docs/metodologia-scrum.md) |
+| 📑 Gerenciamento de Backlogs | [Acessar](./docs/gerenciamento-de-backlogs.md) |
 
+---
 
-
-👥 Equipe
+## 👥 Equipe
 
 <table align="center">
   <tr>
