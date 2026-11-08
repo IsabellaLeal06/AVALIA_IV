@@ -1,3 +1,12 @@
+
+
+
+
+
+
+
+
+
 <h1 align="center">
   <img src="./docs/assets/AVALIA +.svg" alt="Avalia+" width="300"/>
 </h1>
@@ -9,11 +18,31 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white"/>
-  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"/>
   <img src="https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white"/>
+  <img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white"/>
   <img src="https://img.shields.io/badge/Scrum-0052CC?style=flat-square"/>
 </p>
+
+
+
+---
+
+## 📖 Sobre o projeto
+
+O **Avalia+** automatiza a geração de simulados, corrige as respostas automaticamente e acompanha o desempenho acadêmico dos alunos. O projeto dá continuidade ao PIM III, que entregou o levantamento de requisitos, a modelagem preliminar do banco e um protótipo web sem implementação funcional.
+
+No PIM IV a proposta evolui para uma solução completa: um banco de dados em SQL Server, uma API REST única e três aplicações cliente, todas consumindo a mesma API e o mesmo banco.
+
+| Camada | Tecnologia | Perfis atendidos |
+|---|---|---|
+| Banco de dados | SQL Server (T-SQL) | — |
+| API REST | Node.js + Express | — |
+| Aplicação web | HTML, CSS e JavaScript | Administrador, Professor e Aluno |
+| Aplicação desktop | C# com Windows Forms (.NET) | Administrador |
+| Aplicativo mobile | Kotlin com Jetpack Compose | Aluno |
 
 ---
 
@@ -25,9 +54,11 @@
 | 📌 Regras de negócio | [Acessar](./docs/regras-de-negocio.md) |
 | 📚 Escopo do projeto | [Acessar](./docs/escopo-do-projeto.md) |
 | 👥 Tipos de usuários | [Acessar](./docs/tipos-de-usuarios.md) |
+| 🧭 Gestão do projeto: comunicação e riscos | [Acessar](./docs/gestao-do-projeto.md) |
 | 🗄️ Banco de dados e scripts SQL | [Acessar](./database/) |
 | 📐 Diagramas do banco de dados | [Acessar](./diagramas/banco-de-dados/) |
 | 📊 Diagramas UML | [Acessar](./diagramas/uml/) |
+| 🕸️ Diagrama de rede e caminho crítico | [Acessar](./diagramas/rede/diagrama-de-rede.md) |
 | 📚 Documentação | [Acessar](./docs/) |
 | 📋 Product Backlog | [Acessar](./scrum/product-backlog/product-backlog.md) |
 | 📝 Sprint Backlog | [Acessar](./scrum/sprint-backlog/) |
@@ -35,9 +66,12 @@
 | 🔍 Sprint Review | [Acessar](./scrum/sprint-review/) |
 | 🔄 Sprint Retrospective | [Acessar](./scrum/sprint-retrospective/) |
 | 📅 Daily Scrum | [Acessar](./scrum/dailys/) |
+| 🌐 Aplicação Web | [Acessar](./web/) |
+| 🔌 API REST (Node + Express) | [Acessar](./api/) |
+| 📱 Aplicativo Mobile (Kotlin) | Em desenvolvimento · Sprint 7 |
 | 💻 Aplicação Desktop | [Acessar](./desktop/) |
 | ⚙️ Desktop Core | [Acessar](./desktop/Avalia.Desktop.Core/) |
-| 🔌 Desktop Data | [Acessar](./desktop/Avalia.Desktop.Data/) |
+| 🔗 Desktop Data | [Acessar](./desktop/Avalia.Desktop.Data/) |
 | 🖥️ Interface Desktop | [Acessar](./desktop/Avalia.Desktop/) |
 | 📖 Metodologia Scrum | [Acessar](./docs/metodologia-scrum.md) |
 | 📑 Gerenciamento de Backlogs | [Acessar](./docs/gerenciamento-de-backlogs.md) |
@@ -68,7 +102,7 @@
       <img src="./docs/assets/Leticia.jpeg" width="120px" style="border-radius: 50%;" alt="Letícia"/><br/>
       <b>Letícia Aparecida Santos Mota</b><br/>
       Desenvolvedora Backend · UML<br/>
-      <sub>C# · API · Diagramas UML</sub><br/><br/>
+      <sub>C# · JavaScript · Diagramas UML</sub><br/><br/>
       <a href="https://github.com/Jmclemota">GitHub</a> ·
       <a href="https://www.linkedin.com/in/let%C3%ADcia-aparecida-a465b7313/">LinkedIn</a>
     </td>
