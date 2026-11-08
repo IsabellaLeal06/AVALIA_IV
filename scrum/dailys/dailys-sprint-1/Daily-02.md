@@ -1,10 +1,10 @@
-# Daily Scrum — Sprint 01 • Daily 02
+# Daily Scrum — Sprint 02 • Daily 02
 
 > **Projeto:** Avalia+ – PIM IV (UNIP)
 >
-> **Sprint:** Sprint 01 — Requisitos, regras de negócio e repositório
+> **Sprint:** Sprint 02 — Modelagem e documentos do banco de dados
 >
-> **Data:** 19/08/2026
+> **Data:** 02/09/2026
 >
 > **Participantes:** Isabella (Scrum Master), Gabriel (Product Owner / Front-end), Letícia Aparecida (Back-end)
 
@@ -15,50 +15,49 @@
 ### Isabella — Scrum Master
 
 **O que foi concluído**
-- Revisão dos requisitos funcionais RF01 a RF07.
+- Revisão da versão do MER e do histórico de alterações.
+- Levantamento das dependências entre as atividades do backlog para o diagrama de rede.
 
 **O que está em andamento**
-- Revisão dos requisitos não funcionais RNF01 a RNF07 (REQ02).
+- Organizar as mudanças que precisam constar no documento.
 
 **Próximo passo**
-- Iniciar a revisão das regras de negócio.
-
----
+- Conferir o histórico e a identificação da versão.
 
 ### Gabriel — Product Owner / Front-end
 
 **O que foi concluído**
-- Lista inicial das funcionalidades novas do PIM IV.
+- Organização dos pontos de produto e das dependências relacionados à modelagem.
 
 **O que está em andamento**
-- Definição do escopo de melhorias (REQ06).
+- Conferência do alinhamento entre requisitos e os fluxos da aplicação.
 
 **Próximo passo**
-- Validar as melhorias com os requisitos em revisão.
-
----
+- Confirmar os impactos das decisões de modelagem sobre as funcionalidades.
 
 ### Letícia Aparecida — Back-end
 
 **O que foi concluído**
-- Mapeamento dos atores Aluno, Professor e Administrador.
+- Revisão dos diagramas existentes que dependem das decisões do modelo.
 
 **O que está em andamento**
-- Levantamento dos casos de uso afetados pelas mudanças do PIM IV.
+- Ajuste dos diagramas de classes e de sequência.
 
 **Próximo passo**
-- Incluir os casos de uso novos.
+- Conferir os diagramas com o MER atualizado.
+
 
 ---
 
 ## Impedimentos
 
-- Nenhum impedimento registrado.
+- Dependências entre os itens da sprint e necessidade de validar as decisões antes de considerar o incremento concluído.
 
 ---
 
 ## Plano até a próxima Daily
 
-- [ ] Iniciar a revisão das regras de negócio.
-- [ ] Validar as melhorias com os requisitos em revisão.
-- [ ] Incluir os casos de uso novos.
+- [ ] Continuar as atividades previstas para a sprint.
+- [ ] Validar o resultado com os requisitos e regras de negócio.
+- [ ] Registrar impedimentos e atualizar os próximos passos.
+
