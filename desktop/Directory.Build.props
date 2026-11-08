@@ -1,0 +1,13 @@
+<Project>
+  <!-- Configurações comuns a todos os projetos da solução Avalia.Desktop -->
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Permite compilar o projeto Windows Forms também em Linux/macOS (CI) -->
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <Company>Avalia+ | PIM IV | ADS UNIP</Company>
+    <Product>Avalia+ Desktop</Product>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+</Project>

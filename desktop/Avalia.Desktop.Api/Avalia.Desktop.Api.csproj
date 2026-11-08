@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Acesso aos dados pela API REST (Node + Express). Implementa as mesmas interfaces do Core
+       que antes eram atendidas pelo acesso direto ao banco (INF14): o Desktop não conhece mais
+       o banco, a senha dele nem a string de conexão. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Avalia.Desktop.Api</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Avalia.Desktop.Core\Avalia.Desktop.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Avalia.Desktop.Tests" />
+  </ItemGroup>
+
+</Project>
