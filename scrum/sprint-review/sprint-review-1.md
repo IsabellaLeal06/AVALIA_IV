@@ -24,6 +24,8 @@ Durante a Sprint 1 foram realizadas as seguintes atividades:
 - Alinhamento entre os requisitos e o Modelo Entidade-Relacionamento (MER).
 - Padronização da estrutura do repositório GitHub.
 - Atualização do diagrama de casos de uso conforme os requisitos da versão 2.2.
+- Definição do plano de comunicação da equipe.
+- Levantamento e classificação dos riscos do projeto.
 
 ---
 
@@ -36,6 +38,8 @@ Ao final da Sprint 1 foram entregues:
 - Escopo funcional do PIM IV definido.
 - Diagrama de Casos de Uso atualizado.
 - Repositório GitHub organizado e padronizado.
+- Plano de comunicação da equipe documentado.
+- Registro de riscos com doze riscos classificados por probabilidade e impacto.
 
 ---
 
