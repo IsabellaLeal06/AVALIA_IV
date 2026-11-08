@@ -18,6 +18,8 @@ Consolidar os requisitos e regras de negócio da versão 2.2 do Avalia+, alinhar
 - REQ08 – Alinhamento entre requisitos e MER
 - INF01 – Padronização do repositório GitHub
 - MD08 – Ajuste do diagrama de casos de uso
+- GP01 – Plano de comunicação da equipe
+- GP02 – Registro de riscos com matriz de probabilidade × impacto
 
 ---
 
@@ -31,12 +33,14 @@ Consolidar os requisitos e regras de negócio da versão 2.2 do Avalia+, alinhar
 - Corrigir divergências entre requisitos e MER.
 - Padronizar estrutura do GitHub.
 - Atualizar o diagrama de casos de uso.
+- Definir os canais de comunicação da equipe e registrar o plano.
+- Levantar os riscos do projeto e classificá-los por probabilidade e impacto.
 
 ---
 
 ## Responsáveis
 
-- **Isabella:** requisitos, regras de negócio, matrizes, alinhamento com MER e GitHub.
+- **Isabella:** requisitos, regras de negócio, matrizes, alinhamento com MER, GitHub, plano de comunicação e registro de riscos.
 - **Gabriel:** definição do escopo do PIM IV e das plataformas.
 - **Letícia Aparecida:** revisão do diagrama de casos de uso.
 
