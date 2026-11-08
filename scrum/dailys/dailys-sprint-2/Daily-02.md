@@ -16,6 +16,7 @@
 
 **O que foi concluído**
 - Revisão da versão do MER e do histórico de alterações.
+- Levantamento das dependências entre as atividades do backlog para o diagrama de rede.
 
 **O que está em andamento**
 - Organizar as mudanças que precisam constar no documento.
