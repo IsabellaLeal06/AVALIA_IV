@@ -7,5 +7,10 @@ obj/
 # Configuração local com a senha do banco: NUNCA enviar para o GitHub
 appsettings.Local.json
 
-# Imagens de teste salvas pela aplicação Desktop
+# Imagens enviadas (Desktop e API)
 uploads/
+
+# API (Node): dependências e configuração local com a senha do banco e o segredo do token
+node_modules/
+.env
+!.env.example
