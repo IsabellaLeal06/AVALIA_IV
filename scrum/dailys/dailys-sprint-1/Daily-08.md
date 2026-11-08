@@ -17,6 +17,7 @@
 **O que foi concluído**
 - Decisões do alinhamento entre requisitos e MER registradas.
 - Estrutura de pastas e padrão de commits do repositório definidos.
+- Registro de riscos do projeto concluído, com matriz de probabilidade × impacto.
 
 **O que está em andamento**
 - Consolidação do documento de requisitos e regras de negócio v2.2.
