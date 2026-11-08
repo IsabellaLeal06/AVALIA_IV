@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Instruções do simulado | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/simulado.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>INSTRUÇÕES DO <span>SIMULADO</span></h1>
+          <p>Leia com atenção antes de começar.</p>
+        </div>
+
+      </div>
+      <p id="mensagem" hidden></p>
+      <section class="form-caixa">
+        <h2 class="secao">Seu simulado</h2>
+        <p><strong id="resumo-quantidade"></strong> sorteadas entre:</p>
+        <ul class="lista-instrucoes" id="resumo-disciplinas"></ul>
+        <h2 class="secao" style="margin-top:26px">Avisos importantes</h2>
+        <ul class="lista-instrucoes">
+          <li><strong>Tentativa única:</strong> cada simulado tem uma só tentativa. Sair da tela (fechar, recarregar ou navegar para outra página) ENCERRA a tentativa, e não é possível retomá-la.</li>
+          <li>Você pode voltar e avançar entre as questões e mudar as respostas até finalizar.</li>
+          <li>Questões deixadas em branco contam como erro.</li>
+          <li>O tempo decorrido é exibido, sem limite de duração, e não é registrado.</li>
+          <li>Cada acerto vale 10 pontos. O resultado aparece assim que você finalizar.</li>
+        </ul>
+        <div class="botoes">
+          <a class="botao contorno" href="criarsimulados.html">← Voltar</a>
+          <button type="button" class="botao" id="botao-iniciar">Iniciar Simulado →</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/instrucsimulado.js"></script>
+</body>
+</html>

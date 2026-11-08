@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Medalhas | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>FAIXAS DE <span>MEDALHA</span></h1>
+          <p>A medalha do aluno é calculada pela pontuação, comparada com estas faixas.</p>
+        </div>
+        <a class="botao" href="criarmedalha.html">Nova Faixa <span aria-hidden="true">+</span></a>
+      </div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Faixas cadastradas</p><strong id="qtd-faixas">—</strong></div>
+        <div class="card"><p>Alunos ativos ainda sem medalha</p><strong id="qtd-sem-medalha">—</strong></div>
+      </section>
+      <section class="tabela-caixa">
+        <table class="tabela">
+          <caption class="somente-leitor">Faixas de medalha</caption>
+          <thead>
+            <tr>
+              <th scope="col">Medalha</th>
+              <th scope="col">Faixa de pontos</th>
+              <th scope="col">Alunos na faixa</th>
+              <th scope="col"><span class="somente-leitor">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/adminmedalhas.js"></script>
+</body>
+</html>

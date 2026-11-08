@@ -1,0 +1,76 @@
+/* Formulários de cadastro com partes próprias: questão (5 alternativas e imagem) e medalha. */
+
+.alternativa-linha {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.alternativa-linha textarea {
+  min-height: 56px;
+}
+
+.marcar-correta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-width: 78px;
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  background: var(--superficie);
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--texto-fraco);
+  cursor: pointer;
+}
+
+.marcar-correta input {
+  width: 20px;
+  height: 20px;
+}
+
+.marcar-correta:has(input:checked) {
+  border-color: var(--sucesso);
+  background: var(--sucesso-fundo);
+  color: var(--sucesso);
+}
+
+.marcar-correta:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.envio-imagem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.previa-imagem {
+  max-height: 160px;
+  max-width: 260px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+}
+
+.medalha-nome {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cabecalho-formulario {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.voltar {
+  font-weight: bold;
+  text-decoration: none;
+}

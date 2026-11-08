@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Simulado em andamento | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/simulado.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <main class="principal" id="conteudo">
+    <p class="carregando" id="carregando">Carregando o simulado...</p>
+    <p id="mensagem" hidden></p>
+    <div class="area-realizacao" id="area-simulado" hidden>
+      <section class="questao-caixa" aria-labelledby="titulo-questao">
+        <p class="secao-ajuda" id="titulo-simulado"></p>
+        <h1 id="titulo-questao" tabindex="-1">QUESTÃO 1</h1>
+        <p class="contador" id="contador-questao"></p>
+        <p class="enunciado" id="enunciado"></p>
+        <img class="imagem-questao" id="imagem-questao" alt="" hidden>
+        <fieldset class="alternativas" id="alternativas" aria-label="Alternativas"></fieldset>
+        <div class="acoes-questao">
+          <div class="botoes" style="margin:0">
+            <button type="button" class="botao contorno" id="botao-anterior">← Anterior</button>
+            <button type="button" class="botao contorno" id="limpar-resposta">Deixar em branco</button>
+          </div>
+          <div class="botoes" style="margin:0">
+            <button type="button" class="botao" id="botao-proximo">Próximo →</button>
+            <button type="button" class="botao" id="botao-finalizar" hidden>Finalizar simulado</button>
+          </div>
+        </div>
+      </section>
+      <aside class="lateral-simulado" aria-label="Andamento do simulado">
+        <section class="caixa">
+          <h2>Progresso do simulado</h2>
+          <p class="secao-ajuda" id="progresso-texto" aria-live="polite"></p>
+          <div class="barra-trilho" id="progresso" role="progressbar" aria-label="Questões respondidas" aria-valuemin="0"><div class="barra-preenchida" id="progresso-barra"></div></div>
+        </section>
+        <section class="caixa">
+          <h2>Tempo</h2>
+          <p class="cronometro" id="cronometro" aria-label="Tempo decorrido (não é registrado)">00:00:00</p>
+        </section>
+        <section class="caixa">
+          <h2>Questões</h2>
+          <nav class="navegacao-questoes" id="navegacao-questoes" aria-label="Ir para a questão"></nav>
+          <div class="legenda"><span>Azul: respondida</span><span>Branco: em branco</span></div>
+        </section>
+      </aside>
+    </div>
+  </main>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/questoes.js"></script>
+</body>
+</html>

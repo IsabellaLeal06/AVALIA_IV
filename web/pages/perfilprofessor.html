@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Meu perfil | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/perfil.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body data-perfil="2">
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>MEU <span>PERFIL</span></h1>
+          <p>Visualize as suas informações.</p>
+        </div>
+
+      </div>
+      <p id="mensagem" hidden></p>
+      <div class="perfil-conteudo">
+        <section class="perfil-caixa" aria-label="Dados pessoais">
+          <div class="avatar-grande" id="avatar-grande" aria-hidden="true"></div>
+          <dl class="dados-perfil">
+            <div><dt>Nome completo</dt><dd id="campo-nome">—</dd></div>
+            <div><dt>E-mail</dt><dd id="campo-email">—</dd></div>
+            <div><dt>Tipo de usuário</dt><dd id="campo-perfil">—</dd></div>
+            <div><dt>Data de ingresso</dt><dd id="campo-ingresso">—</dd></div>
+            <div id="caixa-turma" hidden><dt>Turma</dt><dd id="campo-turma">—</dd></div>
+          </dl>
+          <div class="botoes">
+            <button type="button" class="botao perigo" id="sair-conta">Sair da conta</button>
+            <a class="botao secundario" href="alterarsenha.html">Alterar senha</a>
+          </div>
+        </section>
+        <aside class="resumo-lateral" aria-label="Resumo rápido">
+          <h2>RESUMO RÁPIDO</h2>
+          <div id="resumo"><p class="carregando">Carregando...</p></div>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/perfil.js"></script>
+</body>
+</html>

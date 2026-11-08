@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Resultado | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/simulado.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <p id="mensagem" hidden></p>
+      <div id="conteudo-resultado" hidden>
+        <div class="titulo-pagina">
+          <div>
+            <h1><span id="saudacao-texto"><span id="saudacao" style="color:var(--texto);-webkit-text-fill-color:var(--texto);background:none"></span><span id="saudacao-nome"></span></span></h1>
+            <p id="saudacao-apoio"></p>
+            <p id="titulo-simulado"></p>
+          </div>
+        </div>
+        <section class="cards-resultado" aria-label="Resultado do simulado">
+          <div class="card destaque-principal"><p>Taxa de acerto</p><strong id="taxa-acerto">—</strong></div>
+          <div class="card"><p>Acertos</p><strong id="acertos">—</strong><small id="detalhe-acertos"></small></div>
+          <div class="card"><p>Pontos obtidos</p><strong id="pontos">—</strong><small id="pontuacao-total"></small></div>
+        </section>
+        <section class="caixa">
+          <h2 class="secao">Desempenho por Disciplina</h2>
+          <p class="secao-ajuda">Como você foi em cada disciplina deste simulado.</p>
+          <div class="barras" id="barras-disciplinas"></div>
+        </section>
+        <div class="botoes" style="justify-content:flex-start">
+          <a class="botao contorno" href="indexdashboar.html">Voltar ao Dashboard</a>
+          <a class="botao secundario" href="criarsimulados.html">Fazer outro Simulado</a>
+          <a class="botao" id="botao-revisar" href="simulados.html">Revisar questões</a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/resultado.js"></script>
+</body>
+</html>

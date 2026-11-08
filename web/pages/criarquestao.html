@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Questão | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="cabecalho-formulario">
+        <a class="voltar" id="link-voltar" href="adminquestoes.html">← Voltar para a lista</a>
+      </div>
+      <div class="titulo-pagina">
+        <div>
+          <h1><span id="titulo-acao">CADASTRAR</span> QUESTÃO</h1>
+          <p id="subtitulo">Adicione uma nova questão ao banco.</p>
+        </div>
+      </div>
+      <p id="mensagem" hidden></p>
+      <form id="formulario" class="form-caixa" novalidate>
+        <p id="aviso-rn11" hidden></p>
+        <div class="campo">
+          <label for="idDisciplina">Disciplina</label>
+          <select id="idDisciplina" name="idDisciplina" required><option value="">Carregando...</option></select>
+        </div>
+        <div class="campo">
+          <label for="enunciado">Enunciado</label>
+          <textarea id="enunciado" name="enunciado" required rows="6"></textarea>
+        </div>
+        <div class="campo" data-campo="imagemUrl">
+          <label for="arquivo-imagem">Imagem <span class="opcional">(opcional, PNG, JPG, GIF ou WEBP, até 2 MB)</span></label>
+          <div class="envio-imagem">
+            <input type="file" id="arquivo-imagem" accept="image/png,image/jpeg,image/gif,image/webp">
+            <img id="previa-imagem" class="previa-imagem" alt="Prévia da imagem da questão" hidden>
+            <button type="button" class="botao pequeno contorno" id="remover-imagem" hidden>Remover imagem</button>
+            <span id="estado-imagem" class="ajuda" role="status"></span>
+          </div>
+        </div>
+        <div class="campo" data-campo="alternativas correta">
+          <span class="rotulo">Alternativas (exatamente 5, de A a E, uma correta)</span>
+        </div>
+        <div id="alternativas"></div>
+        <div class="campo">
+          <label for="explicacao">Explicação da resposta <span class="opcional">(opcional, aparece na revisão do aluno)</span></label>
+          <textarea id="explicacao" name="explicacao" rows="4"></textarea>
+        </div>
+        <div class="botoes">
+          <a class="botao contorno" href="adminquestoes.html">Cancelar</a>
+          <button type="submit" class="botao" id="botao-salvar">Cadastrar Questão</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/criarquestao.js"></script>
+</body>
+</html>

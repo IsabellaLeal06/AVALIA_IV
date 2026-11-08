@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Criar simulado | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/simulado.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>CRIAR <span>SIMULADO</span></h1>
+          <p>Selecione as disciplinas e a quantidade de questões para gerar o seu simulado.</p>
+        </div>
+
+      </div>
+      <p id="mensagem" hidden></p>
+      <form id="formulario" class="form-caixa" novalidate>
+        <div class="campo">
+          <span class="rotulo" id="rotulo-disciplinas">Selecione duas ou mais disciplinas</span>
+          <div class="lista-marcacao" id="lista-disciplinas" role="group" aria-labelledby="rotulo-disciplinas"><p class="carregando">Carregando...</p></div>
+        </div>
+        <fieldset class="campo" style="border:none">
+          <legend class="rotulo">Quantidade de questões</legend>
+          <div class="opcoes-quantidade">
+            <label><input type="radio" name="quantidade" value="10"> 10</label>
+            <label><input type="radio" name="quantidade" value="15"> 15</label>
+            <label><input type="radio" name="quantidade" value="20"> 20</label>
+          </div>
+        </fieldset>
+        <p class="resumo-escolha" id="resumo-escolha" aria-live="polite"></p>
+        <p class="ajuda">As questões são sorteadas livremente entre as disciplinas escolhidas, sem divisão fixa entre elas.</p>
+        <div class="botoes">
+          <a class="botao contorno" href="indexdashboar.html">← Voltar</a>
+          <button type="submit" class="botao" id="botao-proximo" disabled>Próximo →</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/criarsimulados.js"></script>
+</body>
+</html>

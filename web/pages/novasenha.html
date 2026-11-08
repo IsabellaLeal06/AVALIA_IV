@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Crie uma nova senha com o código recebido por e-mail.">
+  <title>Criar nova senha | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/publico.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho-publico">
+    <a class="logo" href="../index.html" aria-label="Avalia+, página inicial"><img class="logo-imagem" src="../assets/img/logo-avalia.svg" alt="Avalia+"></a>
+    <div class="cabecalho-direita">
+      <a class="botao contorno botao-redondo" href="../index.html">Voltar</a>
+    </div>
+  </header>
+  <main id="conteudo" class="autenticacao">
+    <section class="lado-imagem" aria-label="Sobre o Avalia+">
+      <div>
+        <h1>Simulados inteligentes.<br>Resultados reais.</h1>
+        <p>Pratique com as questões do acervo da sua instituição, receba correção automática e acompanhe o seu desempenho por disciplina.</p>
+      </div>
+    </section>
+    <section class="lado-formulario">
+      <form class="caixa-autenticacao" id="formulario" novalidate>
+        <h2>Criar nova senha</h2>
+        <p>Informe o código recebido por e-mail. Depois de conferido, crie a nova senha.</p>
+        <p id="mensagem" hidden></p>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="username">
+        </div>
+        <div class="campo">
+          <label for="codigo">Código de 6 dígitos</label>
+          <input type="text" id="codigo" name="codigo" required inputmode="numeric" maxlength="6" autocomplete="one-time-code">
+        </div>
+        <button type="submit" class="botao" id="botao-validar">Conferir código</button>
+        <div id="etapa-senha" hidden>
+          <div class="campo">
+            <label for="novaSenha">Nova senha</label>
+            <input type="password" id="novaSenha" name="novaSenha" autocomplete="new-password" aria-describedby="regras-senha">
+            <small class="ajuda" id="regras-senha">Mínimo de 8 caracteres, com pelo menos uma letra e um número.</small>
+          </div>
+          <div class="campo">
+            <label for="confirmacao">Confirmar nova senha</label>
+            <input type="password" id="confirmacao" name="confirmacao" autocomplete="new-password">
+          </div>
+          <button type="submit" class="botao" id="botao-salvar">Salvar nova senha</button>
+        </div>
+        <p style="margin-top:20px"><a href="recuperar.html">Pedir um novo código</a> · <a href="login.html">Voltar para o login</a></p>
+      </form>
+    </section>
+  </main>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/novasenha.js"></script>
+</body>
+</html>

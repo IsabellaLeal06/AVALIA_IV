@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>Olá, <span id="nome-usuario"></span></h1>
+          <p>Acompanhe os cadastros ativos da plataforma.</p>
+        </div>
+      </div>
+      <div id="avisos"></div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Turmas ativas</p><strong id="qtd-turmas">—</strong></div>
+        <div class="card"><p>Usuários ativos</p><strong id="qtd-usuarios">—</strong></div>
+        <div class="card"><p>Disciplinas ativas</p><strong id="qtd-disciplinas">—</strong></div>
+        <div class="card"><p>Questões ativas</p><strong id="qtd-questoes">—</strong></div>
+      </section>
+      <section class="caixa">
+        <h2 class="secao">Atalhos</h2>
+        <p class="secao-ajuda">Cadastros mais usados.</p>
+        <div class="botoes" style="justify-content:flex-start">
+          <a class="botao" href="criarusuario.html">Cadastrar usuário</a>
+          <a class="botao secundario" href="criarturma.html">Cadastrar turma</a>
+          <a class="botao secundario" href="criardisciplina.html">Cadastrar disciplina</a>
+          <a class="botao secundario" href="criarquestao.html">Cadastrar questão</a>
+          <a class="botao secundario" href="adminmedalhas.html">Faixas de medalha</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/dashboardadmin.js"></script>
+</body>
+</html>

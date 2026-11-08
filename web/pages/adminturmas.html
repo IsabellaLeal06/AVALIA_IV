@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Turmas | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>TURMAS <span>CADASTRADAS</span></h1>
+          <p>Gerencie as turmas e a grade de disciplinas de cada uma.</p>
+        </div>
+        <a class="botao" href="criarturma.html">Criar Turma <span aria-hidden="true">+</span></a>
+      </div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Turmas ativas</p><strong id="qtd-ativas">—</strong></div>
+        <div class="card"><p>Turmas inativas</p><strong id="qtd-inativas">—</strong></div>
+        <div class="card"><p>Alunos ativos nas turmas ativas</p><strong id="qtd-alunos">—</strong></div>
+      </section>
+      <div class="filtros">
+        <div class="campo">
+          <label for="filtro-situacao">Situação</label>
+          <select id="filtro-situacao"><option value="ativo" selected>Ativas</option><option value="inativo">Inativas</option><option value="todos">Todos</option></select>
+        </div>
+        <div class="campo campo-busca">
+          <label for="filtro-busca">Buscar</label>
+          <input type="search" id="filtro-busca" placeholder="Nome da turma">
+        </div>
+      </div>
+      <section class="tabela-caixa">
+        <table class="tabela">
+          <caption class="somente-leitor">Turmas cadastradas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Turma</th>
+              <th scope="col">Ano letivo</th>
+              <th scope="col">Alunos ativos</th>
+              <th scope="col" class="ocultar-celular">Disciplinas</th>
+              <th scope="col">Situação</th>
+              <th scope="col"><span class="somente-leitor">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/adminturmas.js"></script>
+</body>
+</html>

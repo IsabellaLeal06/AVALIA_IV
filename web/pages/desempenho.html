@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Desempenho | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>MEU <span>DESEMPENHO</span></h1>
+          <p>Acompanhe a sua evolução e analise os seus resultados.</p>
+        </div>
+
+      </div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Taxa média de acerto</p><strong id="taxa-media">—</strong></div>
+        <div class="card"><p>Simulados realizados</p><strong id="qtd-simulados">—</strong></div>
+        <div class="card"><p>Último simulado</p><strong id="ultimo-simulado">—</strong></div>
+      </section>
+      <section class="caixa">
+        <h2 class="secao">Evolução de Desempenho</h2>
+        <p class="secao-ajuda">Taxa de acerto nos últimos simulados.</p>
+        <canvas id="grafico" role="img" height="110"></canvas>
+      </section>
+      <section class="caixa">
+        <h2 class="secao">Desempenho por Disciplina</h2>
+        <p class="secao-ajuda">Aproveitamento acumulado em cada disciplina.</p>
+        <div class="barras" id="barras-disciplinas"><p class="carregando">Carregando...</p></div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/vendor/chart.umd.js"></script>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/desempenho.js"></script>
+</body>
+</html>

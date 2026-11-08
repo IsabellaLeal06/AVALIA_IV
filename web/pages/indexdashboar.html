@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>Olá, <span id="nome-usuario"></span></h1>
+          <p>Acompanhe o seu desempenho e a sua evolução.</p>
+        </div>
+        <a class="botao" href="criarsimulados.html">Criar Simulado</a>
+      </div>
+      <div id="avisos"></div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Taxa média de acerto</p><strong id="taxa-media">—</strong></div>
+        <div class="card"><p>Simulados realizados</p><strong id="qtd-simulados">—</strong></div>
+        <div class="card"><p>Último simulado</p><strong id="ultimo-simulado">—</strong></div>
+        <div class="card"><p>Pontuação acumulada</p><strong id="pontuacao">—</strong></div>
+      </section>
+      <p class="mensagem info" id="mensagem-medalha" role="status"></p>
+      <section class="caixa">
+        <h2 class="secao">Desempenho por Disciplina</h2>
+        <p class="secao-ajuda">Aproveitamento acumulado em todos os simulados realizados.</p>
+        <div class="barras" id="barras-disciplinas"><p class="carregando">Carregando...</p></div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/indexdashboar.js"></script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+/* Telas do ciclo do simulado: montagem, instruções, realização, resultado e revisão. */
+
+.opcoes-quantidade {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.opcoes-quantidade label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--borda);
+  background: var(--superficie-suave);
+  border-radius: 10px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: none;
+  color: var(--texto);
+  font-size: 1rem;
+}
+
+.resumo-escolha {
+  color: var(--texto-fraco);
+  margin-top: 4px;
+}
+
+.lista-instrucoes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 10px 0 0 20px;
+  color: var(--texto-suave);
+}
+
+.lista-instrucoes strong {
+  color: var(--texto);
+}
+
+/* ------------------------------------------------------------------ realização */
+.area-realizacao {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 28px;
+  align-items: start;
+}
+
+.questao-caixa {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: 34px;
+  box-shadow: var(--sombra);
+}
+
+.questao-caixa h1 {
+  font-size: 2.2rem;
+  color: #4d5be7;
+}
+
+.contador {
+  color: var(--texto-fraco);
+  margin: 4px 0 24px;
+}
+
+.enunciado {
+  white-space: pre-line;
+  line-height: 1.65;
+  margin-bottom: 22px;
+}
+
+.imagem-questao {
+  display: block;
+  max-height: 380px;
+  margin: 0 0 22px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+}
+
+fieldset.alternativas {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+label.alternativa {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: var(--superficie-suave);
+  cursor: pointer;
+}
+
+label.alternativa input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+label.alternativa:focus-within {
+  box-shadow: var(--foco);
+}
+
+label.alternativa.selecionada {
+  border-color: var(--azul);
+  background: var(--info-fundo);
+}
+
+.letra {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+}
+
+label.alternativa.selecionada .letra {
+  background: var(--gradiente);
+  border-color: transparent;
+  color: #fff;
+}
+
+.texto-alternativa {
+  white-space: pre-line;
+  padding-top: 4px;
+}
+
+.acoes-questao {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.lateral-simulado {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: sticky;
+  top: 90px;
+}
+
+.lateral-simulado .caixa {
+  margin: 0;
+  padding: 22px;
+}
+
+.lateral-simulado h2 {
+  font-size: 1rem;
+  color: var(--azul);
+  margin-bottom: 12px;
+}
+
+.cronometro {
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: var(--azul);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.navegacao-questoes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.numero-questao {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+  background: var(--superficie);
+  font-weight: bold;
+}
+
+.numero-questao.respondida {
+  background: var(--info-fundo);
+  border-color: var(--azul);
+  color: var(--azul);
+}
+
+.numero-questao.certa {
+  background: var(--sucesso-fundo);
+  border-color: var(--sucesso);
+  color: var(--sucesso);
+}
+
+.numero-questao.errada {
+  background: var(--erro-fundo);
+  border-color: var(--erro);
+  color: var(--erro);
+}
+
+.numero-questao.branco {
+  background: #f3f4f6;
+  border-style: dashed;
+  color: var(--texto-fraco);
+}
+
+.numero-questao.atual {
+  outline: 3px solid var(--roxo);
+  outline-offset: 1px;
+}
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 0.78rem;
+  color: var(--texto-fraco);
+}
+
+/* ------------------------------------------------------------------ resultado */
+.cards-resultado {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 26px;
+}
+
+.cards-resultado .card.destaque-principal strong {
+  font-size: 4.2rem;
+}
+
+/* ------------------------------------------------------------------ revisão */
+.resposta {
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-top: 14px;
+  border: 1px solid var(--borda);
+}
+
+.resposta .rotulo-resposta {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+}
+
+.resposta p {
+  white-space: pre-line;
+}
+
+.resposta.erro .rotulo-resposta {
+  background: var(--erro-fundo);
+  color: var(--erro);
+}
+
+.resposta.acerto .rotulo-resposta,
+.resposta.correta .rotulo-resposta {
+  background: var(--sucesso-fundo);
+  color: var(--sucesso);
+}
+
+.resposta.branco .rotulo-resposta {
+  background: #f3f4f6;
+  color: var(--texto-fraco);
+}
+
+.resposta.explicacao .rotulo-resposta {
+  background: var(--info-fundo);
+  color: var(--azul);
+}
+
+@media (max-width: 900px) {
+  .area-realizacao,
+  .cards-resultado {
+    grid-template-columns: 1fr;
+  }
+
+  .lateral-simulado {
+    position: static;
+    order: -1;
+  }
+
+  .questao-caixa {
+    padding: 22px;
+  }
+}

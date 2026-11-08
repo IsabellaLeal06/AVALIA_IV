@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Minhas turmas | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/professor.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>MINHAS <span>TURMAS</span></h1>
+          <p>Turmas que cursam as suas disciplinas. Clique em uma turma para ver os detalhes.</p>
+        </div>
+
+      </div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Taxa média de acerto das turmas</p><strong id="taxa-media">—</strong></div>
+        <div class="card"><p>Simulados realizados pelas turmas</p><strong id="qtd-simulados">—</strong></div>
+        <div class="card"><p>Último simulado</p><strong id="ultimo-simulado">—</strong></div>
+      </section>
+      <section class="tabela-caixa" style="margin-bottom:26px">
+        <table class="tabela">
+          <caption class="somente-leitor">Minhas turmas</caption>
+          <thead><tr><th scope="col">Turma</th><th scope="col">Alunos ativos</th><th scope="col">Média de acerto</th><th scope="col" class="ocultar-celular">Simulados</th><th scope="col">Último simulado</th></tr></thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </section>
+      <section class="caixa">
+        <h2 class="secao">Questões com maior índice de erro</h2>
+        <p class="secao-ajuda">Nas suas disciplinas, entre os alunos das suas turmas.</p>
+        <ol class="lista-ranking" id="lista-questoes-erro"></ol>
+      </section>
+
+      <dialog class="dialogo modal-grande" id="modal-turma" aria-labelledby="modal-turma-titulo">
+        <div class="modal-conteudo">
+          <button type="button" class="fechar-modal" data-fechar aria-label="Fechar">✕</button>
+          <h2 id="modal-turma-titulo"></h2>
+          <p class="secao-ajuda" id="modal-turma-resumo"></p>
+          <h3>Desempenho por Disciplina</h3>
+          <div class="barras" id="barras-turma"></div>
+          <h3>Questões com maior índice de erro nesta turma</h3>
+          <ol class="lista-ranking" id="questoes-erro-turma"></ol>
+          <div class="botoes"><button type="button" class="botao" id="ver-alunos">Ver todos os estudantes</button></div>
+        </div>
+      </dialog>
+
+      <dialog class="dialogo modal-grande" id="modal-alunos" aria-labelledby="modal-alunos-titulo">
+        <div class="modal-conteudo">
+          <button type="button" class="fechar-modal" data-fechar aria-label="Fechar">✕</button>
+          <button type="button" class="voltar-modal" id="voltar-turma">← Voltar para a turma</button>
+          <h2 id="modal-alunos-titulo"></h2>
+          <p class="secao-ajuda">Média de acertos nas suas disciplinas. Clique em um aluno para ver o painel consolidado.</p>
+          <table class="tabela">
+            <thead><tr><th scope="col">Nome</th><th scope="col">Média de acerto</th><th scope="col">Último simulado</th></tr></thead>
+            <tbody id="tabela-alunos"></tbody>
+          </table>
+        </div>
+      </dialog>
+
+      <dialog class="dialogo modal-grande" id="modal-aluno" aria-labelledby="modal-aluno-titulo">
+        <div class="modal-conteudo">
+          <button type="button" class="fechar-modal" data-fechar aria-label="Fechar">✕</button>
+          <button type="button" class="voltar-modal" id="voltar-alunos">← Voltar para os alunos</button>
+          <h2 id="modal-aluno-titulo"></h2>
+          <p class="secao-ajuda">Painel consolidado: média por disciplina e quantidade de simulados (RN24).</p>
+          <section class="cards">
+            <div class="card"><p>Taxa média de acerto</p><strong id="aluno-media">—</strong></div>
+            <div class="card"><p>Simulados realizados</p><strong id="aluno-simulados">—</strong></div>
+            <div class="card"><p>Último simulado</p><strong id="aluno-ultimo" style="font-size:1.3rem">—</strong></div>
+          </section>
+          <h3>Desempenho por Disciplina</h3>
+          <div class="barras" id="barras-aluno"></div>
+        </div>
+      </dialog>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/turmas.js"></script>
+</body>
+</html>

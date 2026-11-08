@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Disciplina | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="cabecalho-formulario">
+        <a class="voltar" id="link-voltar" href="admindisciplinas.html">← Voltar para a lista</a>
+      </div>
+      <div class="titulo-pagina">
+        <div>
+          <h1><span id="titulo-acao">CADASTRAR</span> DISCIPLINA</h1>
+          <p id="subtitulo">Adicione uma nova disciplina à plataforma.</p>
+        </div>
+      </div>
+      <p id="mensagem" hidden></p>
+      <form id="formulario" class="form-caixa" novalidate>
+        <div class="campo">
+          <label for="nome">Nome da disciplina</label>
+          <input type="text" id="nome" name="nome" maxlength="100" required placeholder="Ex.: Banco de Dados">
+        </div>
+        <div class="campo">
+          <label for="descricao">Descrição <span class="opcional">(opcional)</span></label>
+          <textarea id="descricao" name="descricao" maxlength="500" placeholder="Conteúdos abordados"></textarea>
+        </div>
+        <div class="campo">
+          <label for="idResponsavel">Professor responsável</label>
+          <select id="idResponsavel" name="idResponsavel"><option value="">Sem responsável</option></select>
+          <small class="ajuda">Sem responsável, a disciplina continua disponível aos alunos, mas o cadastro de novas questões fica suspenso (RN07).</small>
+        </div>
+        <div class="campo">
+          <span class="rotulo" id="rotulo-turmas">Turmas que cursam a disciplina</span>
+          <div class="lista-marcacao" id="lista-turmas" role="group" aria-labelledby="rotulo-turmas" data-campo="turmas"></div>
+        </div>
+        <div class="botoes">
+          <a class="botao contorno" href="admindisciplinas.html">Cancelar</a>
+          <button type="submit" class="botao" id="botao-salvar">Criar Disciplina</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/criardisciplina.js"></script>
+</body>
+</html>

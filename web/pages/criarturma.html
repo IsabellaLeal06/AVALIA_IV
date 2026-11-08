@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Turma | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="cabecalho-formulario">
+        <a class="voltar" id="link-voltar" href="adminturmas.html">← Voltar para a lista</a>
+      </div>
+      <div class="titulo-pagina">
+        <div>
+          <h1><span id="titulo-acao">CADASTRAR</span> TURMA</h1>
+          <p id="subtitulo">Adicione uma nova turma à plataforma.</p>
+        </div>
+      </div>
+      <p id="mensagem" hidden></p>
+      <form id="formulario" class="form-caixa" novalidate>
+        <div class="linha-dupla">
+          <div class="campo">
+            <label for="nome">Nome da turma</label>
+            <input type="text" id="nome" name="nome" maxlength="100" required placeholder="Ex.: ADS 3º Semestre A">
+            <small class="ajuda">O período faz parte do nome da turma (RN06).</small>
+          </div>
+          <div class="campo">
+            <label for="anoLetivo">Ano letivo</label>
+            <input type="number" id="anoLetivo" name="anoLetivo" min="2000" max="2100" required>
+          </div>
+        </div>
+        <div class="campo">
+          <span class="rotulo" id="rotulo-disciplinas">Disciplinas da turma <span class="opcional">(grade)</span></span>
+          <div class="lista-marcacao" id="lista-disciplinas" role="group" aria-labelledby="rotulo-disciplinas" data-campo="disciplinas"></div>
+        </div>
+        <div class="botoes">
+          <a class="botao contorno" href="adminturmas.html">Cancelar</a>
+          <button type="submit" class="botao" id="botao-salvar">Criar Turma</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/criarturma.js"></script>
+</body>
+</html>

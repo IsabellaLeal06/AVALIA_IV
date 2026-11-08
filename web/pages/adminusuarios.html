@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Usuários | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>USUÁRIOS <span>CADASTRADOS</span></h1>
+          <p>Gerencie as contas de alunos, professores e administradores.</p>
+        </div>
+        <a class="botao" href="criarusuario.html">Criar Usuário <span aria-hidden="true">+</span></a>
+      </div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Alunos ativos</p><strong id="qtd-alunos">—</strong></div>
+        <div class="card"><p>Professores ativos</p><strong id="qtd-professores">—</strong></div>
+        <div class="card"><p>Administradores ativos</p><strong id="qtd-administradores">—</strong></div>
+      </section>
+      <div class="filtros">
+        <div class="campo">
+          <label for="filtro-perfil">Perfil</label>
+          <select id="filtro-perfil"><option value="">Todos</option><option value="1">Aluno</option><option value="2">Professor</option><option value="3">Administrador</option></select>
+        </div>
+        <div class="campo">
+          <label for="filtro-turma">Turma</label>
+          <select id="filtro-turma"><option value="">Todas</option></select>
+        </div>
+        <div class="campo">
+          <label for="filtro-situacao">Situação</label>
+          <select id="filtro-situacao"><option value="ativo" selected>Ativos</option><option value="inativo">Inativos</option><option value="todos">Todos</option></select>
+        </div>
+        <div class="campo campo-busca">
+          <label for="filtro-busca">Buscar</label>
+          <input type="search" id="filtro-busca" placeholder="Nome ou e-mail">
+        </div>
+      </div>
+      <section class="tabela-caixa">
+        <table class="tabela">
+          <caption class="somente-leitor">Usuários cadastrados</caption>
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Perfil</th>
+              <th scope="col">Turma</th>
+              <th scope="col" class="ocultar-celular">E-mail</th>
+              <th scope="col">Situação</th>
+              <th scope="col"><span class="somente-leitor">Ações</span></th>
+            </tr>
+          </thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/adminusuarios.js"></script>
+</body>
+</html>

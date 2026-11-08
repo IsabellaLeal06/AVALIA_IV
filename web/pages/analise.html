@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Revisão do simulado | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/simulado.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1 id="titulo-simulado" style="font-size:1.9rem">REVISÃO</h1>
+          <p id="subtitulo">Revise as suas respostas.</p>
+        </div>
+        <a class="botao contorno" href="simulados.html">← Meus simulados</a>
+      </div>
+      <p id="mensagem" hidden></p>
+      <div class="area-realizacao" id="area-revisao" hidden>
+        <section class="questao-caixa" aria-labelledby="titulo-questao">
+          <h2 id="titulo-questao" class="secao" style="font-size:2rem;color:#4d5be7">QUESTÃO 1</h2>
+          <p class="contador" id="contador-questao"></p>
+          <p class="enunciado" id="enunciado"></p>
+          <img class="imagem-questao" id="imagem-questao" alt="" hidden>
+          <div class="resposta" id="resposta-marcada">
+            <span class="rotulo-resposta" id="rotulo-marcada"></span>
+            <p id="texto-marcada"></p>
+          </div>
+          <div class="resposta correta">
+            <span class="rotulo-resposta">✔ RESPOSTA CORRETA</span>
+            <p id="texto-correta"></p>
+          </div>
+          <div class="resposta explicacao" id="explicacao" hidden>
+            <span class="rotulo-resposta">EXPLICAÇÃO</span>
+            <p id="texto-explicacao"></p>
+          </div>
+          <div class="acoes-questao">
+            <button type="button" class="botao contorno" id="botao-anterior">← Anterior</button>
+            <button type="button" class="botao" id="botao-proximo">Próxima →</button>
+          </div>
+        </section>
+        <aside class="lateral-simulado" aria-label="Questões do simulado">
+          <section class="caixa">
+            <h2>Questões</h2>
+            <nav class="navegacao-questoes" id="navegacao-questoes" aria-label="Ir para a questão"></nav>
+            <div class="legenda"><span>Verde: acerto</span><span>Vermelho: erro</span><span>Tracejado: em branco</span></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/analise.js"></script>
+</body>
+</html>

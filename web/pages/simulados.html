@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Meus simulados | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>MEUS <span>SIMULADOS</span></h1>
+          <p>Acompanhe os simulados realizados e revise os resultados.</p>
+        </div>
+        <a class="botao" href="criarsimulados.html">Criar Simulado</a>
+      </div>
+      <section class="tabela-caixa">
+        <table class="tabela">
+          <caption class="somente-leitor">Simulados realizados</caption>
+          <thead>
+            <tr>
+              <th scope="col">Simulado</th>
+              <th scope="col">Acertos</th>
+              <th scope="col">Taxa de acerto</th>
+              <th scope="col" class="ocultar-celular">Pontos</th>
+              <th scope="col">Data</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-corpo"></tbody>
+        </table>
+      </section>
+      <div class="paginacao">
+        <button type="button" class="botao pequeno contorno" id="anterior">← Anterior</button>
+        <span id="info-pagina" aria-live="polite"></span>
+        <button type="button" class="botao pequeno contorno" id="proxima">Próxima →</button>
+      </div>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/simulados.js"></script>
+</body>
+</html>

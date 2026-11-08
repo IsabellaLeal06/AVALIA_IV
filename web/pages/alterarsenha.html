@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Alterar senha | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/perfil.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="cabecalho-formulario"><a class="voltar" id="link-voltar" href="perfil.html">← Voltar para o perfil</a></div>
+      <div class="titulo-pagina">
+        <div>
+          <h1>ALTERAR <span>SENHA</span></h1>
+          <p>Você pode alterar a sua própria senha a qualquer momento (RN04).</p>
+        </div>
+
+      </div>
+      <p id="mensagem" hidden></p>
+      <form id="formulario" class="form-caixa form-senha" novalidate>
+        <div class="campo">
+          <label for="senhaAtual">Senha atual</label>
+          <input type="password" id="senhaAtual" name="senhaAtual" required autocomplete="current-password">
+        </div>
+        <div class="campo">
+          <label for="novaSenha">Nova senha</label>
+          <input type="password" id="novaSenha" name="novaSenha" required autocomplete="new-password" aria-describedby="regras-senha">
+          <small class="ajuda" id="regras-senha">Mínimo de 8 caracteres, com pelo menos uma letra e um número.</small>
+        </div>
+        <div class="campo">
+          <label for="confirmacao">Confirmar nova senha</label>
+          <input type="password" id="confirmacao" name="confirmacao" required autocomplete="new-password">
+        </div>
+        <div class="botoes">
+          <button type="submit" class="botao" id="botao-salvar">Alterar senha</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/alterarsenha.js"></script>
+</body>
+</html>

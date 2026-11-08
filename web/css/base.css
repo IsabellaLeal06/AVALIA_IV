@@ -1,0 +1,767 @@
+/* =====================================================================
+   Avalia+ | base.css
+   Tudo o que se repetia em 20 arquivos: variáveis, cabeçalho, menu lateral,
+   títulos, cards, tabelas, formulários, botões, avisos, modais e acessibilidade.
+   Cada tela tem, no seu próprio CSS, só o que é específico dela.
+   ===================================================================== */
+
+:root {
+  --azul: #2563eb;
+  --roxo: #7c3aed;
+  --gradiente: linear-gradient(to right, #2563eb, #7c3aed);
+  --fundo: #f5f6fa;
+  --superficie: #ffffff;
+  --superficie-suave: #f8f9fc;
+  --texto: #111827;
+  --texto-suave: #4b5563;
+  --texto-fraco: #6b7280;
+  --borda: #e5e7eb;
+  --sucesso: #15803d;
+  --sucesso-fundo: #dcfce7;
+  --erro: #b91c1c;
+  --erro-fundo: #fee2e2;
+  --alerta: #92400e;
+  --alerta-fundo: #fef3c7;
+  --info-fundo: #eef2ff;
+  --raio: 14px;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --foco: 0 0 0 3px #f59e0b;
+  --fonte-base: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--fonte-base);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--azul);
+}
+
+/* Foco sempre visível na navegação por teclado (RNF06) */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--foco);
+  border-radius: 6px;
+}
+
+.somente-leitor {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pular-conteudo {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 1000;
+  background: var(--superficie);
+  color: var(--azul);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.pular-conteudo:focus {
+  top: 12px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------ cabeçalho global */
+.cabecalho {
+  height: 70px;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borda);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 32px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.cabecalho .logo img {
+  height: 22px;
+  display: block;
+}
+
+.cabecalho-direita {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.usuario-logado {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--texto);
+  font-size: 0.9rem;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradiente);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.usuario-logado small {
+  display: block;
+  color: var(--texto-fraco);
+  font-size: 0.75rem;
+}
+
+/* ------------------------------------------------------------------ layout com menu lateral */
+.layout {
+  display: flex;
+  min-height: calc(100vh - 70px);
+}
+
+.menu-lateral {
+  width: 210px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 12px;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 70px);
+}
+
+.menu-lateral nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-lateral a,
+.menu-lateral button {
+  display: block;
+  height: 44px;
+  line-height: 44px;
+  border: none;
+  border-radius: 8px;
+  background: none;
+  text-align: left;
+  padding: 0 18px;
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.menu-lateral a:hover {
+  background: var(--info-fundo);
+}
+
+.menu-lateral a[aria-current='page'] {
+  background: var(--gradiente);
+  color: #fff;
+}
+
+.menu-lateral .sair {
+  margin-top: auto;
+  color: var(--texto-fraco);
+}
+
+.principal {
+  flex: 1;
+  min-width: 0;
+  padding: 40px 50px 60px;
+}
+
+/* ------------------------------------------------------------------ títulos */
+.titulo-pagina {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.titulo-pagina h1 {
+  font-size: 2.6rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.titulo-pagina h1 span,
+.destaque {
+  background: var(--gradiente);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.titulo-pagina p {
+  color: var(--texto-fraco);
+  margin-top: 8px;
+}
+
+h2.secao {
+  font-size: 1.2rem;
+  margin-bottom: 6px;
+}
+
+p.secao-ajuda {
+  color: var(--texto-fraco);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+/* ------------------------------------------------------------------ cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: 22px 24px;
+  border-left: 4px solid var(--roxo);
+  box-shadow: var(--sombra);
+}
+
+.card p {
+  font-size: 0.72rem;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 14px;
+}
+
+.card strong {
+  display: block;
+  color: var(--azul);
+  font-size: 2.4rem;
+  line-height: 1.1;
+}
+
+.card small {
+  display: block;
+  color: var(--texto-fraco);
+  margin-top: 6px;
+}
+
+.caixa {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: 26px;
+  box-shadow: var(--sombra);
+  margin-bottom: 26px;
+}
+
+/* ------------------------------------------------------------------ barras de desempenho */
+.barras {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.barra-item .barra-rotulo {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+}
+
+.barra-item .barra-rotulo span:last-child {
+  color: var(--texto-fraco);
+  white-space: nowrap;
+}
+
+.barra-trilho {
+  height: 8px;
+  background: #eceef3;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.barra-preenchida {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--gradiente);
+  width: 0;
+}
+
+/* ------------------------------------------------------------------ filtros e tabela */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 18px;
+}
+
+.filtros .campo {
+  margin: 0;
+  min-width: 170px;
+}
+
+.filtros .campo-busca {
+  flex: 1;
+  min-width: 220px;
+}
+
+.tabela-caixa {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: 14px 20px 20px;
+  box-shadow: var(--sombra);
+  overflow-x: auto;
+}
+
+table.tabela {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  font-size: 0.92rem;
+}
+
+.tabela th {
+  text-align: left;
+  font-weight: normal;
+  color: var(--texto-fraco);
+  padding: 6px 14px;
+  white-space: nowrap;
+}
+
+.tabela td {
+  padding: 13px 14px;
+  border-top: 1px solid var(--borda);
+  border-bottom: 1px solid var(--borda);
+  color: var(--texto-suave);
+  vertical-align: middle;
+}
+
+.tabela td:first-child {
+  border-left: 1px solid var(--borda);
+  border-radius: 10px 0 0 10px;
+  color: var(--texto);
+}
+
+.tabela td:last-child {
+  border-right: 1px solid var(--borda);
+  border-radius: 0 10px 10px 0;
+}
+
+.tabela tr.clicavel {
+  cursor: pointer;
+}
+
+.tabela tr.clicavel:hover td {
+  background: var(--superficie-suave);
+}
+
+.tabela td.acoes {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.tabela div.acoes {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.tabela-vazia {
+  text-align: center;
+  color: var(--texto-fraco);
+  padding: 30px 10px;
+}
+
+.paginacao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  color: var(--texto-fraco);
+  font-size: 0.9rem;
+}
+
+/* ------------------------------------------------------------------ etiquetas */
+.etiqueta {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.etiqueta.ativo {
+  background: var(--sucesso-fundo);
+  color: var(--sucesso);
+}
+
+.etiqueta.inativo {
+  background: #f3f4f6;
+  color: var(--texto-fraco);
+}
+
+.etiqueta.info {
+  background: var(--info-fundo);
+  color: var(--azul);
+}
+
+/* ------------------------------------------------------------------ formulários */
+.form-caixa {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: 32px;
+  box-shadow: var(--sombra);
+  max-width: 900px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.campo label,
+.campo .rotulo {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.campo .opcional {
+  font-weight: normal;
+  text-transform: none;
+  color: var(--texto-fraco);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  border: 1px solid var(--borda);
+  background: var(--superficie-suave);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.campo textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.campo input:disabled,
+.campo select:disabled,
+.campo textarea:disabled {
+  background: #eef0f4;
+  color: var(--texto-fraco);
+}
+
+.campo .ajuda {
+  font-size: 0.8rem;
+  color: var(--texto-fraco);
+}
+
+.campo .erro-campo {
+  font-size: 0.82rem;
+  color: var(--erro);
+}
+
+.campo.com-erro input,
+.campo.com-erro select,
+.campo.com-erro textarea {
+  border-color: var(--erro);
+  background: #fff7f7;
+}
+
+.linha-dupla {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
+}
+
+.lista-marcacao {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  border: 1px solid var(--borda);
+  background: var(--superficie-suave);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.lista-marcacao label {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  text-transform: none;
+  font-weight: normal;
+  color: var(--texto);
+  cursor: pointer;
+}
+
+.lista-marcacao input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.botoes {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* ------------------------------------------------------------------ botões */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-weight: bold;
+  font-size: 0.92rem;
+  text-decoration: none;
+  background: var(--gradiente);
+  color: #fff;
+  min-height: 44px;
+}
+
+.botao:hover {
+  filter: brightness(1.05);
+}
+
+.botao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: none;
+}
+
+.botao.secundario {
+  background: var(--info-fundo);
+  color: var(--azul);
+}
+
+.botao.contorno {
+  background: var(--superficie);
+  color: var(--texto-suave);
+  border: 1px solid var(--borda);
+}
+
+.botao.perigo {
+  background: var(--erro-fundo);
+  color: var(--erro);
+}
+
+.botao.pequeno {
+  padding: 6px 12px;
+  min-height: 34px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+}
+
+/* ------------------------------------------------------------------ mensagens */
+.mensagem {
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 18px;
+  font-size: 0.92rem;
+  white-space: pre-line;
+}
+
+.mensagem.sucesso {
+  background: var(--sucesso-fundo);
+  color: var(--sucesso);
+}
+
+.mensagem.erro {
+  background: var(--erro-fundo);
+  color: var(--erro);
+}
+
+.mensagem.alerta {
+  background: var(--alerta-fundo);
+  color: var(--alerta);
+}
+
+.mensagem.info {
+  background: var(--info-fundo);
+  color: #3730a3;
+}
+
+.carregando {
+  color: var(--texto-fraco);
+  padding: 20px 0;
+}
+
+/* ------------------------------------------------------------------ diálogo de confirmação e modais */
+dialog.dialogo {
+  border: none;
+  border-radius: var(--raio);
+  padding: 0;
+  width: min(520px, calc(100vw - 32px));
+  margin: auto;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.25);
+}
+
+dialog.dialogo::backdrop {
+  background: rgba(17, 24, 39, 0.45);
+}
+
+.dialogo-conteudo {
+  padding: 28px;
+}
+
+.dialogo-conteudo h2 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.dialogo-conteudo p {
+  color: var(--texto-suave);
+  white-space: pre-line;
+}
+
+.dialogo-conteudo .botoes {
+  margin-top: 24px;
+}
+
+dialog.modal-grande {
+  width: min(980px, calc(100vw - 32px));
+}
+
+.fechar-modal {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  border: none;
+  background: none;
+  font-size: 1.4rem;
+  color: var(--texto-fraco);
+  width: 40px;
+  height: 40px;
+}
+
+/* ------------------------------------------------------------------ VLibras sobre o conteúdo */
+[vw] {
+  z-index: 60 !important;
+}
+
+/* ------------------------------------------------------------------ responsivo (RNF05) */
+@media (max-width: 900px) {
+  .cabecalho {
+    padding: 0 16px;
+  }
+
+  .usuario-logado span {
+    display: none;
+  }
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--borda);
+  }
+
+  .menu-lateral nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .menu-lateral a,
+  .menu-lateral button {
+    height: 38px;
+    line-height: 38px;
+    padding: 0 12px;
+  }
+
+  .menu-lateral .sair {
+    margin-top: 6px;
+  }
+
+  .principal {
+    padding: 24px 16px 40px;
+  }
+
+  .titulo-pagina h1 {
+    font-size: 1.8rem;
+  }
+
+  .linha-dupla {
+    grid-template-columns: 1fr;
+  }
+
+  .form-caixa {
+    padding: 20px;
+  }
+
+  .tabela .ocultar-celular {
+    display: none;
+  }
+}

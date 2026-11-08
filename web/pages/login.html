@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Acesse o Avalia+ com o seu e-mail e senha.">
+  <title>Entrar | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/publico.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+  <header class="cabecalho-publico">
+    <a class="logo" href="../index.html" aria-label="Avalia+, página inicial"><img class="logo-imagem" src="../assets/img/logo-avalia.svg" alt="Avalia+"></a>
+    <div class="cabecalho-direita">
+      <a class="botao contorno botao-redondo" href="../index.html">Voltar</a>
+    </div>
+  </header>
+  <main id="conteudo" class="autenticacao">
+    <section class="lado-imagem" aria-label="Sobre o Avalia+">
+      <div>
+        <h1>Simulados inteligentes.<br>Resultados reais.</h1>
+        <p>Pratique com as questões do acervo da sua instituição, receba correção automática e acompanhe o seu desempenho por disciplina.</p>
+      </div>
+    </section>
+    <section class="lado-formulario">
+      <form class="caixa-autenticacao" id="formulario" novalidate>
+        <h2>Bem-vindo(a) de volta</h2>
+        <p>Entre para continuar a sua jornada de aprendizado.</p>
+        <p id="mensagem" hidden></p>
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="username" placeholder="Insira o seu e-mail">
+        </div>
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required autocomplete="current-password" placeholder="Insira a sua senha">
+        </div>
+        <div class="extras">
+          <label><input type="checkbox" id="mostrar-senha"> Mostrar senha</label>
+          <a href="recuperar.html">Esqueceu a sua senha?</a>
+        </div>
+        <button type="submit" class="botao" id="botao-entrar">Entrar</button>
+      </form>
+    </section>
+  </main>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/login.js"></script>
+</body>
+</html>

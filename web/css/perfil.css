@@ -1,0 +1,127 @@
+/* Meu perfil (Aluno, Professor e Administrador) e troca de senha. */
+
+.perfil-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 26px;
+  align-items: start;
+}
+
+.perfil-caixa {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: 34px;
+  box-shadow: var(--sombra);
+}
+
+.avatar-grande {
+  width: 110px;
+  height: 110px;
+  border-radius: 24px;
+  background: var(--gradiente);
+  color: #fff;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 30px;
+}
+
+.dados-perfil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 22px;
+}
+
+.dados-perfil dt {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--texto-fraco);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.dados-perfil dd {
+  background: var(--superficie-suave);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--texto-suave);
+}
+
+.perfil-caixa .botoes {
+  margin-top: 30px;
+  justify-content: stretch;
+}
+
+.perfil-caixa .botoes > * {
+  flex: 1;
+}
+
+.resumo-lateral h2 {
+  font-size: 1.1rem;
+  color: var(--texto-fraco);
+  margin-bottom: 16px;
+}
+
+.resumo-lateral .card {
+  margin-bottom: 16px;
+  border-left-color: #4d5be7;
+}
+
+.resumo-lateral .card strong {
+  font-size: 1.6rem;
+}
+
+/* Gamificação (RN23): sem barra de progresso */
+.gamificacao {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.gamificacao img {
+  width: 110px;
+  height: 110px;
+}
+
+/* Quem ainda não alcançou a primeira faixa vê a medalha acinzentada */
+.gamificacao img.acinzentada {
+  filter: grayscale(1);
+  opacity: 0.45;
+}
+
+.gamificacao .pontuacao {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--azul);
+}
+
+.gamificacao h2 {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.gamificacao p {
+  color: var(--texto-suave);
+}
+
+.form-senha {
+  max-width: 560px;
+}
+
+@media (max-width: 900px) {
+  .perfil-conteudo,
+  .dados-perfil {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-caixa {
+    padding: 22px;
+  }
+
+  .gamificacao {
+    flex-direction: column;
+    text-align: center;
+  }
+}

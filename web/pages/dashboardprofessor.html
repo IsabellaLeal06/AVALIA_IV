@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/professor.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="titulo-pagina">
+        <div>
+          <h1>Olá, <span id="nome-usuario"></span></h1>
+          <p>Indicadores das turmas que cursam as suas disciplinas.</p>
+        </div>
+        <a class="botao" href="turmas.html">Minhas turmas</a>
+      </div>
+      <div id="avisos"></div>
+      <p id="mensagem" hidden></p>
+      <section class="cards" aria-label="Indicadores">
+        <div class="card"><p>Turmas acompanhadas</p><strong id="qtd-turmas">—</strong></div>
+        <div class="card"><p>Taxa média de acerto das turmas</p><strong id="taxa-media">—</strong></div>
+        <div class="card"><p>Simulados realizados pelas turmas</p><strong id="qtd-simulados">—</strong></div>
+        <div class="card"><p>Último simulado</p><strong id="ultimo-simulado">—</strong></div>
+      </section>
+      <div class="duas-colunas">
+        <section class="caixa">
+          <h2 class="secao">Desempenho por Turma</h2>
+          <p class="secao-ajuda">Média de acertos nas suas disciplinas (alunos ativos).</p>
+          <div class="barras" id="barras-turmas"><p class="carregando">Carregando...</p></div>
+        </section>
+        <section class="caixa">
+          <h2 class="secao">Questões com maior índice de erro</h2>
+          <p class="secao-ajuda">Nas suas disciplinas, entre os alunos das suas turmas.</p>
+          <ol class="lista-ranking" id="lista-questoes-erro"></ol>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/dashboardprofessor.js"></script>
+</body>
+</html>

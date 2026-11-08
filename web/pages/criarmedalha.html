@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Medalha | Avalia+</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cadastro.css">
+  <script src="../js/acessibilidade.js"></script>
+</head>
+<body>
+  <header id="cabecalho"></header>
+  <div class="layout">
+    <aside id="menu-lateral"></aside>
+    <main class="principal" id="conteudo">
+      <div class="cabecalho-formulario">
+        <a class="voltar" id="link-voltar" href="adminmedalhas.html">← Voltar para a lista</a>
+      </div>
+      <div class="titulo-pagina">
+        <div>
+          <h1><span id="titulo-acao">NOVA</span> FAIXA DE MEDALHA</h1>
+          <p id="subtitulo">A medalha do aluno é apurada pela pontuação acumulada (RN22).</p>
+        </div>
+      </div>
+      <p id="mensagem" hidden></p>
+      <form id="formulario" class="form-caixa" novalidate>
+        <div class="linha-dupla">
+          <div class="campo">
+            <label for="nome">Nome da medalha</label>
+            <input type="text" id="nome" name="nome" maxlength="50" required placeholder="Ex.: Bronze">
+          </div>
+          <div class="campo">
+            <label for="pontosMinimos">A partir de quantos pontos</label>
+            <input type="number" id="pontosMinimos" name="pontosMinimos" min="1" max="1000000" required>
+            <small class="ajuda">Cada acerto vale 10 pontos (RN21).</small>
+          </div>
+        </div>
+        <div class="campo" data-campo="imagemUrl">
+          <label for="imagemPadrao">Imagem</label>
+          <select id="imagemPadrao" name="imagemPadrao">
+            <option value="">Escolha uma imagem pronta ou envie um arquivo</option>
+            <option value="assets/medalhas/bronze.png">Bronze (imagem padrão)</option>
+            <option value="assets/medalhas/prata.png">Prata (imagem padrão)</option>
+            <option value="assets/medalhas/ouro.png">Ouro (imagem padrão)</option>
+          </select>
+          <div class="envio-imagem" style="margin-top:10px">
+            <label class="somente-leitor" for="arquivo-imagem">Enviar imagem da medalha</label>
+            <input type="file" id="arquivo-imagem" accept="image/png,image/jpeg,image/gif,image/webp">
+            <img id="previa-imagem" class="previa-imagem" alt="Prévia da medalha" hidden>
+            <span id="estado-imagem" class="ajuda" role="status"></span>
+          </div>
+        </div>
+        <div class="botoes">
+          <a class="botao contorno" href="adminmedalhas.html">Cancelar</a>
+          <button type="submit" class="botao" id="botao-salvar">Criar Faixa</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="../js/config.js"></script>
+  <script src="../js/sessao.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/menu.js"></script>
+  <script src="../js/cadastro.js"></script>
+  <script src="../js/criarmedalha.js"></script>
+</body>
+</html>
