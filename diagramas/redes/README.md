@@ -1,17 +1,15 @@
-# Diagramas — Avalia+
+# Diagrama de Rede — Avalia+
 
-Esta pasta reúne os diagramas utilizados para representar a estrutura, o funcionamento e o planejamento do sistema Avalia+.
+Esta pasta reúne o diagrama de rede do projeto Avalia+, elaborado pelo Método do Caminho Crítico (CPM).
 
-## Organização
+## Conteúdo
 
-- `banco-de-dados/`: diagramas relacionados à modelagem do banco de dados.
-- `uml/`: diagramas UML utilizados na representação do sistema.
-- `rede/`: diagrama de rede do projeto, com o caminho crítico do cronograma.
+- [`diagrama-de-rede.md`](./diagrama-de-rede.md): rede geral do projeto e rede detalhada de cada requisito funcional, com duração, datas mais cedo e mais tarde, folga e identificação do caminho crítico.
 
 ## Objetivo
 
-Facilitar a compreensão da arquitetura, dos dados, das interações entre os componentes do sistema e da sequência de dependências entre as atividades do projeto.
+Representar a sequência de dependências entre as atividades do projeto, identificar a cadeia que não admite atraso e indicar quais atividades possuem folga.
 
 ## Manutenção
 
-Mantenha os diagramas organizados e atualizados conforme as decisões e alterações realizadas no projeto.
+O diagrama deve ser revisto sempre que um item for acrescentado, removido ou realocado no [Product Backlog](../../scrum/product-backlog/product-backlog.md), pois a alteração pode mudar o caminho crítico.
