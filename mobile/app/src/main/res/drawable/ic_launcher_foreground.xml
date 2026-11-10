@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ícone do app: "A+" do logotipo, em branco, dentro da área segura do ícone adaptativo -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:translateX="25.9"
+        android:translateY="39"
+        android:scaleX="1.5"
+        android:scaleY="1.5">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M0 20.0308L7.98371 0H12.5622L20.4887 20.0308H14.8514L11.4176 10.7308C11.2268 10.2157 11.0551 9.73879 10.9025 9.30002C10.7499 8.86125 10.6068 8.43202 10.4733 8.01233C10.3397 7.59263 10.2062 7.1634 10.0726 6.72463C9.95818 6.28586 9.85326 5.80894 9.75787 5.29386L10.6736 5.26524C10.5591 5.81848 10.4351 6.31448 10.3016 6.75325C10.1871 7.19202 10.0631 7.61171 9.92956 8.01233C9.79602 8.41294 9.64341 8.83264 9.47172 9.27141C9.3191 9.71018 9.14741 10.1966 8.95664 10.7308L5.52278 20.0308H0ZM3.8917 16.7114L5.58001 12.7053H14.8514L16.4253 16.7114L10.1585 20.0308L3.8917 16.7114Z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M23 12.1044V7.8693H37.336V12.1044H23ZM27.893 17.0548V3.0046H32.443V17.0548H27.893Z" />
+    </group>
+</vector>

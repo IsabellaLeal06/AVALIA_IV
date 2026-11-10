@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Permite HTTP (sem S) para a API rodando no computador durante os testes:
+     emulador (10.0.2.2) e celular na mesma rede Wi-Fi (IP do computador).
+     Quando a API for publicada com HTTPS, troque cleartextTrafficPermitted para false. -->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
