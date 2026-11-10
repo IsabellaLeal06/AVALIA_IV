@@ -48,7 +48,7 @@ public partial class Form_Administrador : Form
 
         var usuario = sessao.Usuario!;
         label_usuarioLogado.Text = $"Olá, {usuario.Nome}\n{usuario.Perfil.Descricao()}";
-        lblStatusBanco.Text = $"Banco: {ambiente.DestinoBanco}";
+        lblStatusBanco.Text = $"API: {ambiente.DestinoApi}";
         lblStatusVersao.Text = $"Avalia+ Desktop {ambiente.Versao}";
         lblDetalheTurmas.Text = "Turmas disponíveis para vincular alunos";
         lblDetalheDisciplinas.Text = "Disciplinas disponíveis para questões e simulados";
@@ -182,4 +182,4 @@ public partial class Form_Administrador : Form
 }
 
 /// <summary>Informações exibidas na barra de status.</summary>
-public sealed record InformacoesAmbiente(string DestinoBanco, string Versao);
+public sealed record InformacoesAmbiente(string DestinoApi, string Versao);

@@ -14,21 +14,14 @@ namespace Avalia.Desktop.Core.Controles;
 public class ControleUsuario(
     IUsuarioRepository usuarios,
     ITurmaRepository turmas,
-    IHashSenha hashSenha,
     SessaoUsuario sessao)
 {
     public const int TamanhoMaximoNome = 150;
 
     public Task<IReadOnlyList<UsuarioResumo>> Listar(FiltroUsuarios filtro) => usuarios.Listar(filtro);
 
-    /// <summary>consultarPorId(id) → Usuario.consultar(id). Devolve os dados com CPF e sem o hash da senha.</summary>
-    public async Task<Usuario?> ConsultarPorId(int id)
-    {
-        var usuario = await usuarios.Consultar(id);
-        if (usuario is not null)
-            usuario.SenhaHash = string.Empty;
-        return usuario;
-    }
+    /// <summary>consultarPorId(id) → Usuario.consultar(id). Devolve os dados com CPF (a senha nunca é devolvida).</summary>
+    public Task<Usuario?> ConsultarPorId(int id) => usuarios.Consultar(id);
 
     /// <summary>
     /// Professores ativos para o ComboBox de responsável pela disciplina. Se o
@@ -40,7 +33,7 @@ public class ControleUsuario(
         return professores.Where(p => p.Ativo || p.Id == idResponsavelAtual).ToList();
     }
 
-    /// <summary>incluir(usuario) → Usuario.incluir(usuario). A senha inicial é o CPF (RN02).</summary>
+    /// <summary>incluir(usuario) → POST /usuarios. A senha inicial é o CPF (RN02): a API grava o hash.</summary>
     public async Task<ResultadoOperacao<int>> Incluir(Usuario dados)
     {
         var usuario = Normalizar(dados);
@@ -48,7 +41,6 @@ public class ControleUsuario(
         if (erros.PossuiErros)
             return ResultadoOperacao<int>.Falha(erros);
 
-        usuario.SenhaHash = hashSenha.Gerar(usuario.Cpf);
         usuario.Ativo = true;
         usuario.PontuacaoTotal = 0;
         try
@@ -59,6 +51,10 @@ public class ControleUsuario(
         catch (ViolacaoUnicidadeException ex)
         {
             return FalhaUnicidade(ex);
+        }
+        catch (FalhaValidacaoApiException ex)
+        {
+            return ResultadoOperacao<int>.Falha(ex.Erros);
         }
     }
 
@@ -85,6 +81,10 @@ public class ControleUsuario(
         catch (ViolacaoUnicidadeException ex)
         {
             return FalhaUnicidade(ex);
+        }
+        catch (FalhaValidacaoApiException ex)
+        {
+            return ResultadoOperacao<int>.Falha(ex.Erros);
         }
     }
 

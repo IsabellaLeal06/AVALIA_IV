@@ -3,10 +3,10 @@ using System.Globalization;
 using Avalia.Desktop.Componentes;
 using Avalia.Desktop.Core.Controles;
 using Avalia.Desktop.Core.Interfaces;
+using Avalia.Desktop.Api;
+using Avalia.Desktop.Api.Arquivos;
+using Avalia.Desktop.Api.Repositorios;
 using Avalia.Desktop.Core.Servicos;
-using Avalia.Desktop.Data.Arquivos;
-using Avalia.Desktop.Data.Conexao;
-using Avalia.Desktop.Data.Repositorios;
 using Avalia.Desktop.Telas;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,9 +27,10 @@ internal static class Program
             .AddJsonFile("appsettings.Local.json", optional: true)
             .Build();
 
-        var stringConexao = ConfiguracaoConexao.ObterStringConexao(configuracao.GetConnectionString("Avalia"));
+        // O Desktop só conhece o endereço da API: não há banco, senha nem string de conexão aqui
+        var urlApi = ConfiguracaoApi.ObterUrl(configuracao["Api:Url"]);
 
-        using var provedor = ConfigurarServicos(configuracao, stringConexao ?? string.Empty);
+        using var provedor = ConfigurarServicos(urlApi);
         var fabrica = provedor.GetRequiredService<IFabricaFormularios>();
         var navegador = provedor.GetRequiredService<Navegador>();
 
@@ -46,12 +47,6 @@ internal static class Program
         {
             using (var login = fabrica.Criar<Form_Autenticar_Usuario>())
             {
-                if (stringConexao is null)
-                    login.ExibirErroConfiguracao(
-                        "A conexão com o banco não está configurada. Crie o arquivo appsettings.Local.json " +
-                        $"(a partir do appsettings.example.json) ou a variável {ConfiguracaoConexao.VariavelAmbiente}. " +
-                        "Veja o passo a passo no documento de instalação.");
-
                 Application.Run(login);
                 if (!login.LoginRealizado)
                     return;
@@ -65,31 +60,26 @@ internal static class Program
     }
 
     /// <summary>
-    /// Ponto único de troca da camada de dados: hoje os repositórios acessam o
-    /// Azure SQL diretamente; com a API em JavaScript, basta registrar aqui as
-    /// implementações do projeto Avalia.Desktop.Api (HttpClient).
+    /// Ponto único da camada de dados: todos os repositórios falam com a API (projeto Avalia.Desktop.Api).
+    /// A API é quem acessa o banco, valida as regras e confere o token a cada requisição (INF14).
     /// </summary>
-    private static ServiceProvider ConfigurarServicos(IConfiguration configuracao, string stringConexao)
+    private static ServiceProvider ConfigurarServicos(string urlApi)
     {
         var servicos = new ServiceCollection();
 
-        // Dados (acesso direto ao banco enquanto a API não existe)
-        servicos.AddSingleton<IFabricaConexao>(new FabricaConexaoSql(stringConexao));
-        servicos.AddSingleton<IUsuarioRepository, UsuarioRepository>();
-        servicos.AddSingleton<ITurmaRepository, TurmaRepository>();
-        servicos.AddSingleton<IDisciplinaRepository, DisciplinaRepository>();
-        servicos.AddSingleton<IQuestaoRepository, QuestaoRepository>();
-        servicos.AddSingleton<IMedalhaRepository, MedalhaRepository>();
-        servicos.AddSingleton<IArmazenamentoImagem>(CriarArmazenamentoImagem(configuracao,
-            "Armazenamento:PastaImagensQuestoes", "Armazenamento:PrefixoUrlImagensQuestoes", "questoes",
-            (pasta, prefixo) => new ArmazenamentoImagemLocal(pasta, prefixo)));
-        servicos.AddSingleton<IArmazenamentoImagemMedalha>(CriarArmazenamentoImagem(configuracao,
-            "Armazenamento:PastaImagensMedalhas", "Armazenamento:PrefixoUrlImagensMedalhas", "medalhas",
-            (pasta, prefixo) => new ArmazenamentoImagemMedalhaLocal(pasta, prefixo)));
+        // Dados, pela API
+        servicos.AddSingleton<SessaoUsuario>();
+        servicos.AddSingleton(p => new ClienteApi(urlApi, p.GetRequiredService<SessaoUsuario>()));
+        servicos.AddSingleton<IAutenticacao, AutenticacaoApi>();
+        servicos.AddSingleton<IUsuarioRepository, UsuarioApiRepository>();
+        servicos.AddSingleton<ITurmaRepository, TurmaApiRepository>();
+        servicos.AddSingleton<IDisciplinaRepository, DisciplinaApiRepository>();
+        servicos.AddSingleton<IQuestaoRepository, QuestaoApiRepository>();
+        servicos.AddSingleton<IMedalhaRepository, MedalhaApiRepository>();
+        servicos.AddSingleton<IArmazenamentoImagem>(p => new ArmazenamentoImagemApi(p.GetRequiredService<ClienteApi>(), "questoes"));
+        servicos.AddSingleton<IArmazenamentoImagemMedalha>(p => new ArmazenamentoImagemMedalhaApi(p.GetRequiredService<ClienteApi>()));
 
         // Classes de controle (regras de negócio), com os nomes do diagrama de classes
-        servicos.AddSingleton<SessaoUsuario>();
-        servicos.AddSingleton<IHashSenha, BCryptHashSenha>();
         servicos.AddSingleton<ControleAutenticarUsuario>();
         servicos.AddSingleton<Visualizar_perfil>();
         servicos.AddSingleton<ControlePainel>();
@@ -102,8 +92,7 @@ internal static class Program
 
         // Telas
         var versao = typeof(Program).Assembly.GetName().Version?.ToString(3) ?? "1.0.0";
-        servicos.AddSingleton(new InformacoesAmbiente(
-            stringConexao.Length == 0 ? "não configurado" : ConfiguracaoConexao.DescreverDestino(stringConexao), versao));
+        servicos.AddSingleton(new InformacoesAmbiente(ConfiguracaoApi.DescreverDestino(urlApi), versao));
         servicos.AddSingleton<IFabricaFormularios, FabricaFormularios>();
         servicos.AddSingleton<Navegador>();
         servicos.AddSingleton<INavegacao>(p => p.GetRequiredService<Navegador>());
@@ -118,18 +107,5 @@ internal static class Program
         servicos.AddTransient<Form_Conf_Desativação>();
 
         return servicos.BuildServiceProvider();
-    }
-
-    private static T CriarArmazenamentoImagem<T>(IConfiguration configuracao, string chavePasta, string chavePrefixo,
-        string padrao, Func<string, string, T> criar)
-    {
-        var pasta = configuracao[chavePasta];
-        if (string.IsNullOrWhiteSpace(pasta))
-            pasta = Path.Combine("uploads", padrao);
-        if (!Path.IsPathRooted(pasta))
-            pasta = Path.Combine(AppContext.BaseDirectory, pasta);
-
-        var prefixo = configuracao[chavePrefixo];
-        return criar(pasta, string.IsNullOrWhiteSpace(prefixo) ? $"uploads/{padrao}/" : prefixo);
     }
 }

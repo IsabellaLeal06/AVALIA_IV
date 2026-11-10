@@ -1,4 +1,3 @@
-
 # 💬 Daily Scrum — Avalia+
 
 Esta pasta reúne os registros das Dailys do Avalia+, organizados em subpastas por sprint. A equipe utiliza o formato assíncrono por mensagens, considerando a disponibilidade dos integrantes.

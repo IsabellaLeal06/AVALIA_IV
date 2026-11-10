@@ -1,7 +1,7 @@
 using Avalia.Desktop.Core.Interfaces;
-using Avalia.Desktop.Core.Modelos;
 using Avalia.Desktop.Core.Servicos;
 using Avalia.Desktop.Core.Validacoes;
+using Avalia.Desktop.Core.Modelos;
 
 namespace Avalia.Desktop.Core.Controles;
 
@@ -21,8 +21,9 @@ public sealed class ResultadoAutenticacao
 /// <summary>
 /// Controle ControleAutenticarUsuario (caso de uso Autenticar Usuário):
 /// autenticarUsuario(email, senha) e sairSistema() (RF01, RN02, RN26, RNF01).
+/// A conferência da senha é da API: o Desktop não guarda nem compara hash.
 /// </summary>
-public class ControleAutenticarUsuario(IUsuarioRepository usuarios, IHashSenha hashSenha, SessaoUsuario sessao)
+public class ControleAutenticarUsuario(IAutenticacao autenticacao, SessaoUsuario sessao)
 {
     /// <summary>Mensagem única para qualquer falha: não revela se o erro foi no e-mail ou na senha.</summary>
     public const string MensagemFalhaLogin = "E-mail ou senha inválidos.";
@@ -32,48 +33,34 @@ public class ControleAutenticarUsuario(IUsuarioRepository usuarios, IHashSenha h
         "As telas do seu perfil estão disponíveis na versão Web" +
         " (e, para alunos, também no aplicativo Mobile).";
 
-    // Hash usado quando o e-mail não existe, para que o tempo de resposta
-    // seja parecido com o de uma senha errada (não revela e-mails cadastrados).
-    private static readonly Lazy<string> HashFicticio =
-        new(() => BCrypt.Net.BCrypt.HashPassword(Guid.NewGuid().ToString(), BCryptHashSenha.Custo));
-
-    /// <summary>autenticarUsuario(email, senha) → Usuario.consultarPorEmail(email)</summary>
+    /// <summary>autenticarUsuario(email, senha) → POST /auth/login da API.</summary>
     public async Task<ResultadoAutenticacao> AutenticarUsuario(string? email, string? senha)
     {
         if (string.IsNullOrWhiteSpace(email) || string.IsNullOrEmpty(senha))
             return new ResultadoAutenticacao { Mensagem = "Informe o e-mail e a senha." };
 
-        var usuario = await usuarios.ConsultarPorEmail(ValidadorEmail.Normalizar(email));
-
-        if (usuario is null)
-        {
-            hashSenha.Verificar(senha, HashFicticio.Value);
-            return new ResultadoAutenticacao { Mensagem = MensagemFalhaLogin };
-        }
-
-        var senhaConfere = hashSenha.Verificar(senha, usuario.SenhaHash);
-
-        // Conta desativada recebe a mesma mensagem genérica
-        if (!senhaConfere || !usuario.Ativo)
+        // E-mail inexistente, senha errada e conta desativada recebem a mesma resposta da API
+        var sessaoApi = await autenticacao.Entrar(ValidadorEmail.Normalizar(email), senha);
+        if (sessaoApi is null)
             return new ResultadoAutenticacao { Mensagem = MensagemFalhaLogin };
 
-        var logado = new UsuarioLogado(usuario.Id, usuario.Nome, usuario.Email, usuario.Perfil);
-        var possuiTelas = usuario.Perfil.PossuiTelasNaDesktop();
-        var recomendarTroca = senha == usuario.Cpf;
+        var logado = sessaoApi.Usuario;
+        var possuiTelas = logado.Perfil.PossuiTelasNaDesktop();
 
+        // RN26 não é bloqueio de segurança: Aluno e Professor autenticam, mas só o Administrador usa esta aplicação
         if (possuiTelas)
-            sessao.Iniciar(logado, recomendarTroca);
+            sessao.Iniciar(logado, sessaoApi.SenhaInicial, sessaoApi.Token);
 
         return new ResultadoAutenticacao
         {
             Sucesso = true,
             Usuario = logado,
             PossuiTelasNaDesktop = possuiTelas,
-            RecomendarTrocaSenha = recomendarTroca,
-            Mensagem = possuiTelas ? $"Bem-vindo(a), {usuario.Nome}!" : MensagemPerfilSemTelas
+            RecomendarTrocaSenha = sessaoApi.SenhaInicial,
+            Mensagem = possuiTelas ? $"Bem-vindo(a), {logado.Nome}!" : MensagemPerfilSemTelas
         };
     }
 
-    /// <summary>sairSistema(): encerra a sessão, se houver, ao fechar a aplicação.</summary>
+    /// <summary>sairSistema(): encerra a sessão (apaga o token da memória).</summary>
     public void SairSistema() => sessao.Encerrar();
 }

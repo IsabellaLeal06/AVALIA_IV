@@ -16,6 +16,7 @@
 
 **O que foi concluído**
 - Ajustes nos diagramas de classes e de sequência existentes desde o PIM III.
+- Diagrama de rede concluído, com o caminho crítico e as folgas identificados.
 
 **O que está em andamento**
 - Alinhar os diagramas ao escopo e às regras revisadas.

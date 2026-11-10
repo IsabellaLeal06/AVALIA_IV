@@ -3,7 +3,7 @@ namespace Avalia.Desktop.Core.Validacoes;
 /// <summary>Confere os arquivos de imagem das questões e das medalhas.</summary>
 public static class ValidadorImagem
 {
-    public static readonly string[] Extensoes = [".png", ".jpg", ".jpeg", ".gif", ".bmp"];
+    public static readonly string[] Extensoes = [".png", ".jpg", ".jpeg", ".gif", ".webp"];
     public const long TamanhoMaximoBytes = 2 * 1024 * 1024;
     public const int TamanhoMaximoUrl = 500;
 
@@ -30,7 +30,7 @@ public static class ValidadorImagem
         if (!arquivo.Exists)
             return "Arquivo de imagem não encontrado.";
         if (!Extensoes.Contains(arquivo.Extension.ToLowerInvariant()))
-            return "Formato de imagem não suportado. Use PNG, JPG, GIF ou BMP.";
+            return "Formato de imagem não suportado. Use PNG, JPG, GIF ou WEBP.";
         if (arquivo.Length > TamanhoMaximoBytes)
             return "A imagem deve ter no máximo 2 MB.";
         return null;

@@ -16,6 +16,7 @@
 
 **O que foi concluído**
 - Revisão dos requisitos funcionais RF01 a RF07.
+- Definição dos canais de comunicação da equipe e registro do plano.
 
 **O que está em andamento**
 - Revisão dos requisitos não funcionais RNF01 a RNF07 (REQ02).

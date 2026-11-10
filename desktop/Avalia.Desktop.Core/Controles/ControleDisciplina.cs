@@ -49,6 +49,10 @@ public class ControleDisciplina(IDisciplinaRepository disciplinas, IUsuarioRepos
         {
             return ResultadoOperacao<int>.Falha("Já existe uma disciplina com este nome.", nameof(Disciplina.Nome));
         }
+        catch (FalhaValidacaoApiException ex)
+        {
+            return ResultadoOperacao<int>.Falha(ex.Erros);
+        }
     }
 
     /// <summary>editar(id, disciplina) → Disciplina.editar(id, disciplina). Disciplina inativa não é editada.</summary>
@@ -74,6 +78,10 @@ public class ControleDisciplina(IDisciplinaRepository disciplinas, IUsuarioRepos
         catch (ViolacaoUnicidadeException)
         {
             return ResultadoOperacao<int>.Falha("Já existe uma disciplina com este nome.", nameof(Disciplina.Nome));
+        }
+        catch (FalhaValidacaoApiException ex)
+        {
+            return ResultadoOperacao<int>.Falha(ex.Erros);
         }
     }
 

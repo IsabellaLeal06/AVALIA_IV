@@ -3,17 +3,14 @@ using Avalia.Desktop.Core.Modelos;
 namespace Avalia.Desktop.Core.Interfaces;
 
 /// <summary>
-/// Persistência da classe Usuario do diagrama de classes
-/// (consultar, consultarPorEmail, listar, incluir, editar, desativar,
-/// alterarSenha e contarAtivos).
+/// Acesso aos dados da classe Usuario do diagrama de classes (consultar, listar, incluir,
+/// editar, desativar, reativar e contarAtivos), feito pela API. O login e a troca de senha
+/// ficam em <see cref="IAutenticacao"/>.
 /// </summary>
 public interface IUsuarioRepository
 {
-    /// <summary>Dados completos, incluindo o hash da senha (uso interno dos controles).</summary>
+    /// <summary>Dados completos do usuário, incluindo o CPF (a senha nunca é devolvida).</summary>
     Task<Usuario?> Consultar(int id);
-
-    /// <summary>Busca pelo e-mail para autenticação, incluindo o hash da senha.</summary>
-    Task<Usuario?> ConsultarPorEmail(string email);
 
     /// <summary>Listagem sem CPF e sem senha.</summary>
     Task<IReadOnlyList<UsuarioResumo>> Listar(FiltroUsuarios filtro);
@@ -29,7 +26,6 @@ public interface IUsuarioRepository
 
     Task Desativar(int id);
     Task Reativar(int id);
-    Task AlterarSenha(int id, string hash);
 
     /// <summary>Professores para o ComboBox de responsável pela disciplina.</summary>
     Task<IReadOnlyList<OpcaoSelecao>> ListarProfessores(bool somenteAtivos);

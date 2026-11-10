@@ -8,9 +8,6 @@ public class Usuario
     public string Cpf { get; set; } = string.Empty;
     public string Email { get; set; } = string.Empty;
 
-    /// <summary>Hash BCrypt da senha (RNF01). Nunca contém a senha em texto.</summary>
-    public string SenhaHash { get; set; } = string.Empty;
-
     public string? FotoUrl { get; set; }
     public DateTime DataIngresso { get; set; } = DateTime.Today;
     public bool Ativo { get; set; } = true;

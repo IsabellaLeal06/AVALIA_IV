@@ -22,6 +22,8 @@ A Sprint Retrospective da Sprint 1 teve como objetivo analisar o processo de tra
 * Definição das telas de cada plataforma (Web, Desktop e Mobile).
 * Padronização da estrutura do repositório GitHub e organização inicial do projeto.
 * Revisão do diagrama de casos de uso conforme os requisitos atualizados.
+* Definição do plano de comunicação da equipe, com a divisão entre registro assíncrono e decisões presenciais.
+* Abertura do registro de riscos, com matriz de probabilidade × impacto.
 
 ---
 
@@ -57,6 +59,7 @@ Para melhorar o andamento do projeto na Sprint 2, a equipe definiu as seguintes 
 * Revisar os diagramas de Classes e de Sequência conforme as mudanças dos requisitos.
 * Iniciar a elaboração das primeiras etapas da documentação do PIM IV.
 * Manter a organização das tarefas e das Dailys durante toda a Sprint.
+* Elaborar o diagrama de rede do projeto a partir do backlog consolidado, identificando o caminho crítico.
 
 ---
 

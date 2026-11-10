@@ -69,6 +69,10 @@ public class ControleTurma(ITurmaRepository turmas, IDisciplinaRepository discip
         {
             return FalhaDuplicada(turma);
         }
+        catch (FalhaValidacaoApiException ex)
+        {
+            return ResultadoOperacao<int>.Falha(ex.Erros);
+        }
     }
 
     /// <summary>editar(id, turma, disciplinas) → Turma.editar(id, turma, disciplinas). Turma inativa não é editada.</summary>
@@ -94,6 +98,10 @@ public class ControleTurma(ITurmaRepository turmas, IDisciplinaRepository discip
         catch (ViolacaoUnicidadeException)
         {
             return FalhaDuplicada(turma);
+        }
+        catch (FalhaValidacaoApiException ex)
+        {
+            return ResultadoOperacao<int>.Falha(ex.Erros);
         }
     }
 

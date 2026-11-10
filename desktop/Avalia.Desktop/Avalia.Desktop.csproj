@@ -20,7 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Avalia.Desktop.Core\Avalia.Desktop.Core.csproj" />
-    <ProjectReference Include="..\Avalia.Desktop.Data\Avalia.Desktop.Data.csproj" />
+    <ProjectReference Include="..\Avalia.Desktop.Api\Avalia.Desktop.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +29,7 @@
     <EmbeddedResource Include="Recursos\avalia.ico" />
   </ItemGroup>
 
-  <!-- Configuração: o example é versionado; o Local (com a senha) fica fora do Git -->
+  <!-- Configuração: o example é versionado; o Local (endereço da API deste computador) fica fora do Git -->
   <ItemGroup>
     <None Update="appsettings.example.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="appsettings.Local.json" Condition="Exists('appsettings.Local.json')" CopyToOutputDirectory="PreserveNewest" />

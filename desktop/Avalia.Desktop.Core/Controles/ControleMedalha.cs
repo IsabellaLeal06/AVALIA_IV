@@ -148,6 +148,12 @@ public class ControleMedalha(IMedalhaRepository medalhas, IArmazenamentoImagemMe
         {
             return await gravar();
         }
+        catch (FalhaValidacaoApiException ex)
+        {
+            if (imagemCopiada is not null)
+                await armazenamentoImagem.RemoverAsync(imagemCopiada);
+            return ResultadoOperacao<int>.Falha(ex.Erros);
+        }
         catch (ViolacaoUnicidadeException ex)
         {
             if (imagemCopiada is not null)

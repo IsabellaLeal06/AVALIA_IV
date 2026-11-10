@@ -1,3 +1,4 @@
+using Avalia.Desktop.Core.Excecoes;
 using Avalia.Desktop.Core.Interfaces;
 using Avalia.Desktop.Core.Modelos;
 using Avalia.Desktop.Core.Servicos;
@@ -10,19 +11,13 @@ namespace Avalia.Desktop.Core.Controles;
 /// usuário conectado, alteração da própria senha (RN04) e saída da conta.
 /// O nome segue o diagrama de classes.
 /// </summary>
-public class Visualizar_perfil(IUsuarioRepository usuarios, IHashSenha hashSenha, SessaoUsuario sessao)
+public class Visualizar_perfil(IUsuarioRepository usuarios, IAutenticacao autenticacao, SessaoUsuario sessao)
 {
-    /// <summary>visualizarPerfil(id) → Usuario.consultar(id). Devolve os dados sem a senha.</summary>
-    public async Task<Usuario?> VisualizarPerfil(int id)
-    {
-        var usuario = await usuarios.Consultar(id);
-        if (usuario is not null)
-            usuario.SenhaHash = string.Empty;
-        return usuario;
-    }
+    /// <summary>visualizarPerfil(id) → Usuario.consultar(id). A senha nunca é devolvida.</summary>
+    public Task<Usuario?> VisualizarPerfil(int id) => usuarios.Consultar(id);
 
     /// <summary>
-    /// alterarSenha(id, senhaAtual, novaSenha, confirmacao) → Usuario.alterarSenha(id, hash).
+    /// alterarSenha(id, senhaAtual, novaSenha, confirmacao) → POST /auth/alterar-senha da API.
     /// RN04: o usuário altera a própria senha.
     /// </summary>
     public async Task<ResultadoOperacao> AlterarSenha(int id, string? senhaAtual, string? novaSenha, string? confirmacao)
@@ -47,18 +42,20 @@ public class Visualizar_perfil(IUsuarioRepository usuarios, IHashSenha hashSenha
         if (erros.PossuiErros)
             return ResultadoOperacao.Falha(erros);
 
-        var usuario = await usuarios.Consultar(id);
-        if (usuario is null || !usuario.Ativo)
-            return ResultadoOperacao.Falha("Usuário não encontrado ou desativado.");
-
-        if (!hashSenha.Verificar(senhaAtual, usuario.SenhaHash))
-            return ResultadoOperacao.Falha("A senha atual não confere.", CamposSenha.SenhaAtual);
-
         // Como a nova senha precisa ter letra (ValidadorSenha), ela nunca será o CPF
         if (novaSenha == senhaAtual)
             return ResultadoOperacao.Falha("A nova senha deve ser diferente da senha atual.", CamposSenha.NovaSenha);
 
-        await usuarios.AlterarSenha(id, hashSenha.Gerar(novaSenha));
+        try
+        {
+            await autenticacao.AlterarSenha(senhaAtual, novaSenha, confirmacao);
+        }
+        catch (FalhaValidacaoApiException ex)
+        {
+            // Ex.: "A senha atual não confere." no campo da senha atual
+            return ResultadoOperacao.Falha(ex.Erros);
+        }
+
         sessao.RecomendarTrocaSenha = false;
         return ResultadoOperacao.Ok("Senha alterada com sucesso.");
     }

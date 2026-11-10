@@ -15,15 +15,20 @@ public class SessaoUsuario
     /// <summary>RN02: a senha usada no login ainda é o CPF. A troca é recomendada, não obrigatória.</summary>
     public bool RecomendarTrocaSenha { get; set; }
 
-    public void Iniciar(UsuarioLogado usuario, bool recomendarTrocaSenha = false)
+    /// <summary>Token da API (prazo de 7 dias), enviado em toda requisição. Fica só na memória.</summary>
+    public string? Token { get; private set; }
+
+    public void Iniciar(UsuarioLogado usuario, bool recomendarTrocaSenha = false, string? token = null)
     {
         Usuario = usuario;
         RecomendarTrocaSenha = recomendarTrocaSenha;
+        Token = token;
     }
 
     public void Encerrar()
     {
         Usuario = null;
         RecomendarTrocaSenha = false;
+        Token = null;
     }
 }

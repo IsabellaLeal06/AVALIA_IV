@@ -1,260 +1,230 @@
-# Gerenciamento de Backlogs – Projeto Avalia+
+# Product Backlog — Avalia+ (PIM IV)
 
-## Descrição
+Este documento reúne o **Product Backlog** do projeto Avalia+: a lista única e ordenada de tudo o que o produto precisa para ser considerado concluído no PIM IV.
 
-Esta pasta reúne toda a documentação relacionada ao gerenciamento de Backlogs do projeto **Avalia+**, utilizando a metodologia ágil Scrum para organização, priorização e acompanhamento das atividades do sistema e da documentação acadêmica do **PIM IV**.
-
-O gerenciamento de Backlogs permite estruturar tanto o desenvolvimento técnico da plataforma quanto as entregas acadêmicas exigidas no projeto.
+O backlog foi reconstruído a partir do documento de [Requisitos e Regras de Negócio](../../docs/requisitos-do-sistema.md) na versão 2.2, do Modelo Entidade-Relacionamento vigente e do cronograma oficial das sete sprints. Ele substitui integralmente a versão elaborada no PIM III.
 
 ---
 
-# Estrutura do Documento
+## 1. Como o backlog está organizado
 
-## 1. Introdução
+Os **setenta e sete itens** estão distribuídos em sete blocos. A divisão facilita a atribuição de responsáveis e a rastreabilidade com as nove etapas exigidas pelo manual do PIM IV.
 
-Apresenta a proposta do gerenciamento de Backlogs no projeto Avalia+, incluindo a organização das atividades relacionadas ao desenvolvimento do sistema, modelagem, diagramas, banco de dados, API e documentação técnica.
+| Bloco | Escopo | Itens | Responsável principal | Sprints |
+|:---:|---|:---:|---|:---:|
+| **REQ** | Requisitos, regras de negócio e matrizes de rastreabilidade | 8 | Isabella | S1 |
+| **MD** | Modelagem do banco de dados e diagramas UML | 13 | Isabella e Letícia Ap. | S1, S2 e S6 |
+| **INF** | Repositório, banco físico, API, autenticação e planos de infraestrutura | 18 | Letícia Ap. e Isabella | S1 e S3 a S7 |
+| **PB** | Funcionalidades do sistema e aplicações desktop e mobile | 10 | Gabriel | S3 a S7 |
+| **TST** | Testes de API, de regras de negócio, de interface e de integração | 11 | Letícia Ap. e Gabriel | S4 a S7 |
+| **DOC** | Documentação acadêmica conforme as etapas do manual | 14 | Isabella | S2 a S6 |
+| **GP** | Gestão do projeto: comunicação, riscos e cronograma de rede | 3 | Isabella | S1 e S2 |
 
----
+### Níveis de prioridade
 
-## 2. Backlogs no Scrum
+- **Alta** — o item bloqueia outros itens ou compõe entrega obrigatória;
+- **Média** — o item é necessário à entrega, mas não bloqueia outros;
+- **Baixa** — o item é desejável e pode ser reduzido em caso de atraso.
 
-O projeto utiliza os principais Backlogs do framework Scrum:
+### Critérios de ordenação
 
-### Product Backlog
+A ordem dos itens obedece a quatro critérios, aplicados nesta sequência:
 
-Lista contendo todas as funcionalidades, melhorias e atividades previstas para o desenvolvimento da plataforma.
+1. **Dependência técnica** — itens que bloqueiam outros vêm primeiro. Requisitos precedem a modelagem, que precede o banco de dados, que precede a API, que precede as aplicações.
+2. **Peso na avaliação** — itens vinculados às etapas de maior pontuação no manual do PIM IV têm prioridade.
+3. **Risco** — itens de maior incerteza técnica são antecipados, para que eventuais problemas apareçam com tempo hábil de correção.
+4. **Esforço** — entre itens equivalentes nos critérios anteriores, executa-se primeiro o de menor esforço.
 
-### Sprint Backlog
-
-Conjunto de atividades selecionadas para execução durante cada Sprint.
-
----
-
-# Product Backlog do Projeto Avalia+
-
-O Product Backlog foi dividido em três categorias principais:
-
-- Funcionalidades do sistema.
-- Modelagem e diagramas.
-- Documentação do projeto.
-
-Essa divisão permite melhor organização e controle das atividades desenvolvidas ao longo das sprints.
-
----
-
-# 1. Funcionalidades do Sistema
-
-Esses itens representam as funcionalidades principais da plataforma Avalia+.
-
-| ID | Funcionalidade | Descrição | Prioridade |
-|---|---|---|---|
-| PB01 | Autenticação de usuários | Permitir login utilizando e-mail e senha com controle de acesso por perfil. | Alta |
-| PB02 | Recuperação de senha | Permitir redefinição de senha por e-mail com código único de recuperação. | Alta |
-| PB03 | Cadastro de usuários | Gerenciamento de usuários (Aluno, Professor e Administrador). | Alta |
-| PB04 | Gerenciamento de disciplinas | Cadastro, edição e desativação de disciplinas. | Alta |
-| PB05 | Gerenciamento de turmas | Criação, edição, desativação e vinculação de disciplinas e alunos às turmas. | Alta |
-| PB06 | Gerenciamento de questões | Cadastro, edição e desativação de questões por disciplina (Administrador e Professor). | Alta |
-| PB07 | Geração automática de simulados | Gerar simulados automáticos com disciplinas selecionadas e quantidade configurável de questões. | Alta |
-| PB08 | Realização de simulados | Permitir realização de simulados nas plataformas Web e Mobile. | Alta |
-| PB09 | Correção automática | Correção automática após a finalização do simulado. | Alta |
-| PB10 | Histórico de simulados | Armazenamento dos simulados realizados pelo aluno. | Média |
-| PB11 | Dashboard de desempenho | Indicadores de desempenho para alunos e professores. | Média |
-| PB12 | Sistema de gamificação | Pontuação acumulada e medalhas conforme desempenho do aluno. | Média |
-| PB13 | Controle de permissões | Restrição de acesso conforme perfil do usuário. | Alta |
-| PB14 | Plataforma Desktop | Aplicação administrativa desenvolvida em C# Windows Forms. | Alta |
-| PB15 | Plataforma Mobile | Aplicativo do aluno para simulados e acompanhamento de desempenho. | Média |
-| PB16 | Recursos de acessibilidade | Integração do VLibras na plataforma Web. | Média |
+A sequência de dependências está representada graficamente no [diagrama de rede](../../diagramas/rede/diagrama-de-rede.md), que identifica o caminho crítico do projeto.
 
 ---
 
-# 2. Modelagem e Diagramas do Sistema
+## 2. Bloco REQ — Requisitos e regras de negócio
 
-Essas atividades representam a modelagem estrutural e funcional da plataforma.
+Bloco de abertura do projeto, responsável por definir o alvo de todo o restante do trabalho. Nenhum item de modelagem ou de código inicia antes de sua conclusão, pois alterações de requisito nesta fase propagam-se para o banco, para os diagramas e para as três aplicações.
 
-| ID | Atividade | Descrição | Prioridade |
-|---|---|---|---|
-| MD01 | Diagrama de Casos de Uso | Representação das interações do sistema. | Alta |
-| MD02 | Diagrama de Classes | Modelagem das entidades e relacionamentos do sistema (backend C#). | Alta |
-| MD03 | Diagrama de Sequência | Fluxo de execução das funcionalidades. | Média |
-| MD04 | Fluxo de Usuário | Navegação dos usuários na plataforma Web, Desktop e Mobile. | Alta |
-| MD05 | Modelo Conceitual (MER) | Estrutura conceitual do banco de dados. | Alta |
-| MD06 | Modelo Lógico | Estrutura lógica das tabelas do banco de dados. | Alta |
-| MD07 | Diagrama Entidade-Relacionamento (DER) | Representação gráfica do banco de dados. | Alta |
-| MD08 | Dicionário de Dados | Documentação das tabelas, atributos, chaves e restrições. | Média |
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| REQ01 | Revisão dos requisitos funcionais (RF01 a RF07) | Alta | Isabella | S1 |
+| REQ02 | Revisão dos requisitos não funcionais (RNF01 a RNF07) | Alta | Isabella | S1 |
+| REQ03 | Revisão das regras de negócio (RN01 a RN27) | Alta | Isabella | S1 |
+| REQ04 | Matriz de rastreabilidade RF × RN | Alta | Isabella | S1 |
+| REQ05 | Matriz de rastreabilidade requisitos × etapas do manual | Alta | Isabella | S1 |
+| REQ06 | Definição do escopo de melhorias do PIM III para o PIM IV | Alta | Gabriel | S1 |
+| REQ07 | Definição do escopo de telas por plataforma (RN26) | Alta | Gabriel | S1 |
+| REQ08 | Alinhamento entre os requisitos e o Modelo Entidade-Relacionamento | Alta | Isabella | S1 |
 
-Essas atividades garantem organização e padronização da estrutura do sistema.
-
----
-
-# 3. Documentação do Projeto
-
-Essas atividades correspondem à elaboração da documentação acadêmica do **PIM IV**.
-
-| ID | Atividade | Descrição | Prioridade |
-|---|---|---|---|
-| DOC01 | Introdução do projeto | Apresentação geral da proposta. | Alta |
-| DOC02 | Descrição do problema | Problema que o sistema pretende solucionar e evolução do PIM III. | Alta |
-| DOC03 | Objetivos do sistema | Objetivos gerais e específicos. | Alta |
-| DOC04 | Público-alvo | Identificação dos usuários da plataforma. | Média |
-| DOC05 | Requisitos do sistema | Requisitos funcionais, não funcionais e regras de negócio. | Alta |
-| DOC06 | Arquitetura do sistema | Tecnologias, API e estrutura das plataformas Web, Desktop e Mobile. | Média |
-| DOC07 | Modelagem do sistema | Diagramas UML, MER, DER, Modelo Lógico e Dicionário de Dados. | Alta |
-| DOC08 | Metodologia de desenvolvimento | Aplicação da metodologia Scrum. | Alta |
-| DOC09 | Planejamento de Sprints | Organização das atividades por Sprint. | Alta |
-| DOC10 | Conclusão do projeto | Resultados e considerações finais do PIM IV. | Média |
+> **Observação.** O item REQ08 foi acrescentado durante a Sprint 1, após a revisão dos requisitos revelar divergências com o modelo herdado do PIM III. É um exemplo do caráter emergente do Product Backlog: itens surgem à medida que o entendimento do produto amadurece.
 
 ---
 
-# Planejamento das Sprints
+## 3. Bloco MD — Modelagem e diagramas
 
-## Sprint 1 – Planejamento e Levantamento de Requisitos
+O modelo conceitual encontrava-se estruturalmente concluído desde o PIM III. Este bloco trata da conferência contra a versão 2.2 dos requisitos e da atualização dos documentos derivados. Os diagramas de implantação e de implementação são inteiramente novos.
 
-### Objetivo
-
-Organizar o projeto, revisar os requisitos da versão 2.2 do Avalia+ e estruturar o gerenciamento das atividades.
-
-### Atividades
-
-- Organização do repositório GitHub.
-- Revisão dos requisitos funcionais.
-- Revisão dos requisitos não funcionais.
-- Revisão das regras de negócio.
-- Criação do Product Backlog.
-- Planejamento das Sprints.
-
----
-
-## Sprint 2 – Modelagem do Sistema
-
-### Objetivo
-
-Desenvolver a modelagem estrutural e conceitual da plataforma.
-
-### Atividades
-
-- Revisão e atualização do MER.
-- Atualização do DER.
-- Modelo Lógico do banco de dados.
-- Dicionário de Dados.
-- Diagrama de Casos de Uso.
-- Documentação da arquitetura.
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| MD01 | Conferência do MER contra os requisitos v2.2 | Alta | Isabella | S2 |
+| MD02 | Atualização da versão do MER e do histórico de alterações | Alta | Isabella | S2 |
+| MD03 | Ajuste do campo de explicação da resposta | Alta | Isabella | S2 |
+| MD04 | Revisão da desativação de turma e disciplina no modelo (RN12) | Alta | Isabella | S2 |
+| MD05 | Atualização do DER | Alta | Isabella | S2 |
+| MD06 | Atualização do dicionário de dados | Alta | Isabella | S2 |
+| MD07 | Modelo lógico do banco de dados | Alta | Isabella | S2 |
+| MD08 | Ajuste do diagrama de casos de uso | Alta | Letícia Ap. | S1 |
+| MD09 | Ajuste do diagrama de classes | Alta | Letícia Ap. | S2 |
+| MD10 | Ajuste do diagrama de sequência | Alta | Letícia Ap. | S2 |
+| MD11 | Revalidação dos diagramas UML após a implementação | Média | Letícia Ap. | S6 |
+| MD12 | Diagrama de implantação | Média | Letícia Ap. | S6 |
+| MD13 | Diagrama de implementação | Média | Letícia Ap. | S6 |
 
 ---
 
-## Sprint 3 – Banco de Dados e API
+## 4. Bloco INF — Infraestrutura e arquitetura
 
-### Objetivo
+Bloco inexistente no PIM III. Concentra a maior parte do trabalho técnico novo do semestre, uma vez que o projeto anterior não possuía banco de dados, backend nem integração entre aplicações.
 
-Desenvolver a estrutura técnica da plataforma e iniciar a implementação da API.
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| INF01 | Padronização do repositório de versionamento | Alta | Isabella | S1 |
+| INF02 | Script DDL do banco de dados | Alta | Isabella | S3 |
+| INF03 | Restrições de unicidade e de domínio (RN27, RNF03) | Alta | Isabella | S3 |
+| INF04 | Carga inicial de dados: perfis, medalhas e massa de teste | Média | Isabella | S3 |
+| INF05 | Procedures do banco de dados | Média | Isabella | S5 |
+| INF06 | Triggers de pontuação acumulada e composição da questão | Média | Isabella | S5 |
+| INF07 | Índices para otimização de consultas | Média | Isabella | S5 |
+| INF08 | Estruturação da API em camadas | Alta | Letícia Ap. | S3 |
+| INF09 | Endpoints REST da API | Alta | Letícia Ap. | S3 |
+| INF10 | Autenticação por token com expiração e hash de senha | Alta | Letícia Ap. | S3 |
+| INF11 | Envio de e-mail para recuperação de senha com código único | Alta | Letícia Ap. | S3 |
+| INF12 | Upload e armazenamento de imagens | Média | Letícia Ap. | S4 |
+| INF13 | Transação única da correção de simulado (RNF03) | Alta | Letícia Ap. | S5 |
+| INF14 | Integração entre as aplicações e a API | Alta | Gabriel | S7 |
+| INF15 | Plano de arquitetura em nuvem | Média | Gabriel | S6 |
+| INF16 | Plano de containers e pipeline CI/CD | Média | Gabriel | S6 |
+| INF17 | Plano de monitoramento, escalabilidade e segurança | Média | Gabriel | S6 |
+| INF18 | Versionamento do código das aplicações no repositório | Alta | Gabriel | S7 |
 
-### Atividades
-
-- Script SQL do banco de dados.
-- Constraints e integridade dos dados.
-- Estrutura da API REST.
-- Sistema de autenticação.
-- Recuperação de senha.
-- Integração inicial entre API e banco de dados.
-
----
-
-## Sprint 4 – Funcionalidades Administrativas
-
-### Objetivo
-
-Desenvolver os módulos administrativos da plataforma Avalia+.
-
-### Atividades
-
-- Cadastro e gerenciamento de usuários.
-- Cadastro de turmas.
-- Cadastro de disciplinas.
-- Cadastro e gerenciamento de questões.
-- Upload de imagens das questões.
-- Desenvolvimento da aplicação Desktop.
+> **Observação.** Os itens INF15 a INF17 são documentais. O manual solicita a elaboração de um plano de execução, e não a implantação efetiva da infraestrutura em nuvem.
 
 ---
 
-## Sprint 5 – Simulados e Desempenho
+## 5. Bloco PB — Funcionalidades do sistema
 
-### Objetivo
+Cada item deste bloco corresponde diretamente a um requisito funcional do documento de requisitos, o que preserva a rastreabilidade entre o backlog e o escopo formalizado.
 
-Implementar o fluxo completo dos simulados e o acompanhamento de desempenho dos usuários.
-
-### Atividades
-
-- Geração automática de simulados.
-- Realização de simulados.
-- Correção automática.
-- Revisão comentada.
-- Histórico de simulados.
-- Dashboard do aluno.
-- Dashboard do professor.
-
----
-
-## Sprint 6 – Gamificação, Acessibilidade e Documentação
-
-### Objetivo
-
-Implementar funcionalidades complementares e concluir a documentação do projeto.
-
-### Atividades
-
-- Sistema de pontuação.
-- Sistema de medalhas.
-- Integração do VLibras.
-- Testes da aplicação Web.
-- Testes da aplicação Desktop.
-- Revisão da documentação acadêmica.
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| PB01 | RF01 — Autenticação e controle de acesso por perfil | Alta | Gabriel | S3 |
+| PB02 | RF02 — Gestão de cadastros institucionais | Alta | Gabriel | S4 |
+| PB03 | RF03 — Gestão do banco de questões | Alta | Gabriel | S4 |
+| PB04 | RF04 — Geração e realização de simulados | Alta | Gabriel | S5 |
+| PB05 | RF05 — Correção automática e revisão comentada | Alta | Gabriel | S5 |
+| PB06 | RF06 — Acompanhamento de desempenho | Alta | Gabriel | S5 |
+| PB07 | RF07 — Gamificação por pontuação e medalhas | Alta | Gabriel | S6 |
+| PB08 | RNF06 — Integração do VLibras e recursos de acessibilidade | Alta | Gabriel | S6 |
+| PB09 | Aplicação desktop em C# com Windows Forms | Média | Letícia Ap. | S6 |
+| PB10 | Aplicativo mobile em Kotlin com Jetpack Compose | Alta | Gabriel | S7 |
 
 ---
 
-## Sprint 7 – Mobile, Integração e Entrega Final
+## 6. Bloco TST — Testes
 
-### Objetivo
+Bloco também inexistente no PIM III. As evidências de teste compõem a documentação final e demonstram a qualidade da solução entregue.
 
-Finalizar o aplicativo Mobile, integrar as plataformas e preparar a entrega final do PIM IV.
-
-### Atividades
-
-- Desenvolvimento da aplicação Mobile.
-- Integração entre Web, Desktop e Mobile.
-- Testes de integração.
-- Registro das evidências dos testes.
-- Ajustes finais da plataforma.
-- Organização da entrega final do projeto.
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| TST01 | Testes da API e dos endpoints | Alta | Letícia Ap. | S4 |
+| TST02 | Testes de autenticação, primeiro acesso e recuperação de senha | Alta | Letícia Ap. | S4 |
+| TST03 | Testes de visibilidade de dados por perfil (RN24) | Alta | Letícia Ap. | S4 |
+| TST04 | Testes de desativação em cascata (RN12) | Alta | Letícia Ap. | S4 |
+| TST05 | Testes de simulado, correção e sorteio multidisciplina | Alta | Gabriel | S5 |
+| TST06 | Testes do frontend web | Alta | Gabriel | S6 |
+| TST07 | Testes da aplicação desktop | Média | Letícia Ap. | S6 |
+| TST08 | Testes de acessibilidade e do VLibras | Média | Gabriel | S6 |
+| TST09 | Testes do aplicativo mobile | Alta | Gabriel | S7 |
+| TST10 | Testes de integração entre as três aplicações e a API | Alta | Gabriel | S7 |
+| TST11 | Registro das evidências de teste | Média | Isabella | S7 |
 
 ---
 
-# Estrutura de Organização no Trello
+## 7. Bloco DOC — Documentação acadêmica
 
-O quadro do Trello foi organizado com as seguintes listas:
+Itens organizados conforme as nove etapas exigidas pelo manual do PIM IV, acrescidos dos elementos de formatação e da revisão final.
 
-| Lista | Descrição |
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| DOC01 | Elementos pré-textuais em ABNT | Alta | Isabella | S6 |
+| DOC02 | Introdução | Alta | Isabella | S2 |
+| DOC03 | Etapa 1 — Caracterização da organização | Alta | Isabella | S2 |
+| DOC04 | Etapa 2 — Planejamento da solução tecnológica | Alta | Gabriel | S2 |
+| DOC05 | Etapa 3 — Responsabilidade social e diversidade | Alta | Isabella | S3 |
+| DOC06 | Etapa 4 — Desenvolvimento da solução web | Alta | Gabriel | S5 |
+| DOC07 | Etapa 5 — Desenvolvimento da solução mobile | Alta | Gabriel | S6 |
+| DOC08 | Etapa 6 — Arquitetura de software | Alta | Letícia Ap. | S5 |
+| DOC09 | Etapa 7 — Projeto do banco de dados | Alta | Isabella | S5 |
+| DOC10 | Etapa 8 — Infraestrutura em nuvem e DevOps | Média | Gabriel | S6 |
+| DOC11 | Etapa 9 — Gerenciamento ágil do projeto | Alta | Isabella | S6 |
+| DOC12 | Conclusão | Alta | Isabella | S6 |
+| DOC13 | Referências em ABNT | Alta | Isabella | S6 |
+| DOC14 | Apêndices, anexos e revisão final | Alta | Isabella | S6 |
+
+---
+
+## 8. Bloco GP — Gestão do projeto
+
+Itens de gerenciamento que o manual cobra além dos artefatos do Scrum. Foram posicionados no início do projeto porque orientam a forma de trabalho das sprints seguintes: o plano de comunicação define como a equipe se coordena, o registro de riscos antecipa os problemas conhecidos e o diagrama de rede identifica a cadeia de atividades que não admite atraso.
+
+| ID | Item | Prioridade | Responsável | Sprint |
+|:---:|---|:---:|---|:---:|
+| GP01 | Plano de comunicação da equipe | Alta | Isabella | S1 |
+| GP02 | Registro de riscos com matriz de probabilidade × impacto | Alta | Isabella | S1 |
+| GP03 | Diagrama de rede do projeto e identificação do caminho crítico | Alta | Isabella | S2 |
+
+> **Observação.** O item GP03 foi alocado na Sprint 2, e não na Sprint 1, porque o diagrama de rede depende do backlog consolidado: sem a lista de atividades e suas dependências, não é possível calcular o caminho crítico. O registro de riscos (GP02), por sua vez, é revisado a cada Sprint Retrospective, e não apenas na sprint em que foi criado.
+
+Os dois documentos produzidos por este bloco são:
+
+- [`docs/gestao-do-projeto.md`](../../docs/gestao-do-projeto.md) — plano de comunicação e gerenciamento de riscos;
+- [`diagramas/rede/diagrama-de-rede.md`](../../diagramas/rede/diagrama-de-rede.md) — diagrama de rede pelo Método do Caminho Crítico.
+
+---
+
+## 9. Definition of Done
+
+Os critérios de conclusão variam conforme a natureza do item, uma vez que um diagrama, um trecho de código e uma seção de documento não se verificam da mesma forma.
+
+| Tipo de item | Critérios de conclusão |
 |---|---|
-| Product Backlog | Funcionalidades e atividades gerais. |
-| Sprint 1 | Planejamento e levantamento de requisitos. |
-| Sprint 2 | Modelagem e diagramas. |
-| Sprint 3 | Banco de Dados e API. |
-| Sprint 4 | Funcionalidades administrativas. |
-| Sprint 5 | Simulados e desempenho. |
-| Sprint 6 | Gamificação, acessibilidade e documentação. |
-| Sprint 7 | Mobile, integração e entrega final. |
-| Em Desenvolvimento | Atividades em execução. |
-| Em Revisão | Atividades em validação. |
-| Concluído | Atividades finalizadas. |
+| **Código** (PB, INF) | Funcionalidade implementada conforme o requisito de origem; regras de negócio aplicadas no servidor, e não apenas na interface; código versionado com commit padronizado; testado pelo responsável; revisado por outro integrante; sem erros de execução; comportamento consistente entre as plataformas envolvidas. |
+| **Modelagem e diagramas** (MD) | Diagrama gerado na ferramenta definida; coerente com os requisitos v2.2 e com o banco de dados implementado; exportado em imagem e versionado; revisado por outro integrante. |
+| **Requisitos** (REQ) | Redigido no documento oficial de requisitos; sem contradição com os demais requisitos, regras e com o MER; refletido nas matrizes de rastreabilidade; aprovado pelos três integrantes. |
+| **Testes** (TST) | Cenários de teste definidos; testes executados; falhas corrigidas ou registradas como pendência; evidência registrada por captura de tela ou relatório. |
+| **Documentação** (DOC, GP) | Seção redigida integralmente; formatada conforme as normas da ABNT quando aplicável; revisada por outro integrante; fontes citadas e referenciadas. |
 
 ---
 
-# Benefícios da Utilização de Backlogs
+## 10. Rastreabilidade com as etapas do manual
 
-A utilização de Backlogs no projeto Avalia+ proporciona:
+A matriz abaixo relaciona cada etapa avaliativa do manual do PIM IV aos itens do backlog responsáveis por atendê-la, de modo que nenhuma exigência fique sem item correspondente.
 
-- organização das atividades;
-- definição clara de prioridades;
-- acompanhamento do progresso;
-- transparência no desenvolvimento;
-- melhor planejamento das entregas.
+| Etapa do manual | Pontos | Itens do backlog |
+|---|:---:|---|
+| Formatação ABNT | 1,0 | DOC01, DOC13, DOC14 |
+| 1 — Caracterização da organização | 1,0 | DOC03 |
+| 2 — Planejamento da solução tecnológica | 1,0 | DOC04, REQ06 |
+| 3 — Responsabilidade social e diversidade | 0,5 | DOC05, PB08 |
+| 4 — Desenvolvimento da solução web | 2,0 | PB01 a PB08, INF08 a INF13, DOC06 |
+| 5 — Desenvolvimento da solução mobile | 2,0 | PB10, DOC07 |
+| 6 — Arquitetura de software | — | MD09, MD10, INF08, DOC08 |
+| 7 — Projeto do banco de dados | 1,0 | MD01 a MD07, INF02 a INF07, DOC09 |
+| 8 — Infraestrutura em nuvem e DevOps | 0,5 | MD12, INF15 a INF17, DOC10 |
+| 9 — Gerenciamento ágil do projeto | 1,0 | DOC11, GP01 a GP03, backlog, cronograma e quadro Kanban |
 
-Além disso, o uso do Trello auxilia no controle visual das tarefas e no acompanhamento das atividades realizadas pela equipe.
+---
+
+## 11. Atualização do backlog
+
+O Product Backlog é um documento vivo. Os ajustes decorrem das validações realizadas nas cerimônias do Scrum — Sprint Planning, Daily Scrum, Sprint Review e Sprint Retrospective — e devem permanecer alinhados ao documento de Requisitos e Regras de Negócio v2.2, ao Modelo Entidade-Relacionamento e ao cronograma das sete sprints.
+
+Sempre que um item for acrescentado, removido ou realocado, o diagrama de rede deve ser revisto, pois a alteração pode mudar o caminho crítico do projeto.

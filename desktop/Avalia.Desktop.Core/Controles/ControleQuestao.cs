@@ -1,3 +1,4 @@
+using Avalia.Desktop.Core.Excecoes;
 using Avalia.Desktop.Core.Interfaces;
 using Avalia.Desktop.Core.Modelos;
 using Avalia.Desktop.Core.Servicos;
@@ -140,6 +141,13 @@ public class ControleQuestao(
         try
         {
             return await gravar();
+        }
+        catch (FalhaValidacaoApiException ex)
+        {
+            // A API recusou os dados (ex.: RN07, disciplina sem responsável): mostra no campo certo
+            if (imagemCopiada is not null)
+                await armazenamentoImagem.RemoverAsync(imagemCopiada);
+            return ResultadoOperacao<int>.Falha(ex.Erros);
         }
         catch
         {

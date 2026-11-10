@@ -34,17 +34,10 @@ public partial class Form_Autenticar_Usuario : Form
         button_email.Focus();
     }
 
-    /// <summary>Banco não configurado: avisa na tela e impede o login.</summary>
-    public void ExibirErroConfiguracao(string mensagem)
-    {
-        ExibirErro(mensagem);
-        btn_autenticarUsuario.Enabled = false;
-    }
-
     /// <summary>digitarCredenciais(email, senha) → autenticarUsuario(email, senha)</summary>
     public async Task DigitarCredenciais(string email, string senha)
     {
-        ExibirInformacao("Conectando ao banco de dados...");
+        ExibirInformacao("Conectando ao servidor...");
 
         ResultadoAutenticacao? resultado = null;
         var concluiu = await Operacao.ExecutarAsync(this, ExibirErro,

@@ -7,7 +7,7 @@ public static class ValidadorSenha
 {
     public const int TamanhoMinimo = 8;
 
-    /// <summary>O BCrypt considera no máximo 72 bytes da senha.</summary>
+    /// <summary>A API usa BCrypt, que considera no máximo 72 bytes da senha.</summary>
     public const int TamanhoMaximoBytes = 72;
 
     public const string Regras = "Mínimo de 8 caracteres, com pelo menos uma letra e um número.";

@@ -427,7 +427,7 @@ namespace Avalia.Desktop.Telas
             label_dicaImagem.Location = new Point(146, 192);
             label_dicaImagem.Size = new Size(468, 110);
             label_dicaImagem.TabIndex = 9;
-            label_dicaImagem.Text = "Arraste a imagem (PNG, JPG, GIF ou BMP, até 2 MB) para o quadro ao lado, ou cole o caminho do arquivo e clique em Usar imagem: ela será copiada ao salvar. Também pode ser informado o caminho usado pela versão Web, como assets/medalhas/bronze.png.";
+            label_dicaImagem.Text = "Arraste a imagem (PNG, JPG, GIF ou WEBP, até 2 MB) para o quadro ao lado, ou cole o caminho do arquivo e clique em Usar imagem: ela será enviada para a API ao salvar. Também pode ser informado o caminho usado pela versão Web, como assets/medalhas/bronze.png.";
             label_dicaImagem.Name = "label_dicaImagem";
             // 
             // lblFaixa
