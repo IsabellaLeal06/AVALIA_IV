@@ -11,6 +11,8 @@ Esta pasta contém os arquivos relacionados à estrutura, configuração e prepa
 | `02_restricoes.sql` | Script relacionado às restrições de integridade do banco de dados. |
 | `03_carga_inicial.sql` | Script de carga inicial de dados. |
 | `04_dados_teste.sql` | Script com dados destinados a testes. |
+| `05_procedures.sql` | Procedures de consulta e conferência (INF05): `sp_PontuacaoAluno`, `sp_DesempenhoAluno`, `sp_HistoricoSimulados` e `sp_ConferirPontuacao`. Somente leitura. |
+| `06_triggers.sql` | Triggers (INF06): pontuação acumulada e que nunca diminui (RN21), respostas e resultados imutáveis (RN19) e alternativa correta bloqueada em questão já utilizada (RN11). |
 | `banco_questoes.json` | Arquivo JSON relacionado ao banco de questões do sistema. |
 
 ## Tecnologia

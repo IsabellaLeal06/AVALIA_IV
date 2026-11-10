@@ -3,7 +3,7 @@
    Script 00 - RESET (SOMENTE PARA AMBIENTE DE TESTE)
 
    Apaga TODAS as tabelas do Avalia+ e todos os dados.
-   Depois dele, execute novamente: 01 -> 02 -> 03 -> 04.
+   Depois dele, execute novamente: 01 -> 02 -> 03 -> 04 -> 05 -> 06.
 
    Proteção: o script só roda se @confirmar for alterado para 1.
    NUNCA execute em um banco com dados reais.
@@ -37,9 +37,15 @@ DROP TABLE IF EXISTS dbo.Usuario;
 DROP TABLE IF EXISTS dbo.Turma;
 DROP TABLE IF EXISTS dbo.Perfil;
 DROP TABLE IF EXISTS dbo.Medalha;
+
+/* Os triggers (script 06) são apagados junto com as tabelas; as procedures (script 05) não. */
+DROP PROCEDURE IF EXISTS dbo.sp_PontuacaoAluno;
+DROP PROCEDURE IF EXISTS dbo.sp_DesempenhoAluno;
+DROP PROCEDURE IF EXISTS dbo.sp_HistoricoSimulados;
+DROP PROCEDURE IF EXISTS dbo.sp_ConferirPontuacao;
 GO
 
-PRINT N'00_reset.sql concluído: tabelas removidas. Execute agora 01 -> 02 -> 03 -> 04.';
+PRINT N'00_reset.sql concluído: tabelas removidas. Execute agora 01 -> 02 -> 03 -> 04 -> 05 -> 06.';
 GO
 
 SET NOEXEC OFF;

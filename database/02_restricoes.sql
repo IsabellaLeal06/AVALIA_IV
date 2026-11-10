@@ -8,9 +8,9 @@
 
    A regra "5 alternativas com apenas 1 correta" (RN09) não é expressável
    por CHECK e é validada na aplicação (Desktop e, depois, na API).
-   Triggers e procedures pertencem aos itens INF05/INF06.
+   Procedures (INF05) e triggers (INF06) estão nos scripts 05 e 06.
 
-   Ordem de execução: 01 -> 02 -> 03 -> 04
+   Ordem de execução: 01 -> 02 -> 03 -> 04 -> 05 -> 06
    ===================================================================== */
 
 SET NOCOUNT ON;

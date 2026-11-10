@@ -10,7 +10,7 @@
    Este script cria apenas as tabelas, as chaves primárias e os valores
    padrão. UNIQUE, CHECK e FOREIGN KEY ficam no script 02.
 
-   Ordem de execução: 01 -> 02 -> 03 -> 04
+   Ordem de execução: 01 -> 02 -> 03 -> 04 -> 05 -> 06
    ===================================================================== */
 
 SET NOCOUNT ON;

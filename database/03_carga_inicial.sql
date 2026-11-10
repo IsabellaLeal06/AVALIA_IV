@@ -7,7 +7,7 @@
    Medalha: faixas da gamificação (RN22). As faixas ficam em tabela para
             que a instituição possa ajustá-las sem alterar as aplicações.
 
-   Ordem de execução: 01 -> 02 -> 03 -> 04
+   Ordem de execução: 01 -> 02 -> 03 -> 04 -> 05 -> 06
    ===================================================================== */
 
 SET NOCOUNT ON;
