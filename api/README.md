@@ -51,6 +51,7 @@ Usuários de teste (dados fictícios do `04_dados_teste.sql`; a senha inicial é
 | **Horário** | As colunas DATETIME guardam o horário de Brasília, como nos dados de teste. A API envia datas sem fuso (`2026-10-14T19:30:00`). |
 | **Imagens** | Upload em `POST /upload/imagem` (PNG, JPG, GIF ou WEBP, até 2 MB, tipo conferido pelo conteúdo e nome gerado pelo servidor). O banco guarda o caminho relativo (`uploads/questoes/...`); as respostas trazem o endereço completo. |
 | **RN11** | "Questão já utilizada" = questão que entrou em algum simulado (tabela `SimuladoQuestao`), como diz a regra v2.2 e como faz a Desktop. |
+| **Pontuação (INF06)** | O trigger `trg_ResultadoSimulado_AcumularPontuacao` (script 06) soma os pontos ao gravar o resultado. A API só soma por conta própria se esse trigger não existir ou estiver desabilitado, então não conta em dobro e funciona com o banco só nos scripts 01 a 04. |
 | **Medalhas** | Além do que o PROMPT pedia, há o cadastro de faixas (`/medalhas`), com as mesmas regras da tela Gerenciar Medalha da Desktop, para a migração INF14. A exclusão de faixa é física, como na Desktop: a faixa não tem vínculo com aluno. |
 
 ## Estrutura
@@ -153,12 +154,12 @@ npm test
 ```
 
 - Os testes de **unidade** (CPF, senha, correção, caminhos de imagem) rodam sempre.
-- Os testes de **integração** usam um **banco de TESTE** informado em `DB_CONEXAO_TESTE` no `.env`, com os scripts 01 a 04 da pasta `database`. Eles criam simulados, trocam senhas e desativam registros. **Nunca aponte para o banco de produção.** Sem `DB_CONEXAO_TESTE`, eles são pulados com um aviso.
+- Os testes de **integração** usam um **banco de TESTE** informado em `DB_CONEXAO_TESTE` no `.env`, com os scripts 01 a 06 da pasta `database` (sem o 05 e o 06, só os testes de procedures e triggers são pulados). Eles criam simulados, trocam senhas e desativam registros. **Nunca aponte para o banco de produção.** Sem `DB_CONEXAO_TESTE`, eles são pulados com um aviso.
 - Banco de teste local (opcional, com Docker):
   ```bash
   docker run -d --name sqlavalia -e ACCEPT_EULA=Y -e "MSSQL_SA_PASSWORD=Teste#Local2026" -p 1433:1433 mcr.microsoft.com/mssql/server:2022-latest
   ```
-  Crie o banco `avalia`, rode os scripts 01 a 04 e use no `.env`:
+  Crie o banco `avalia`, rode os scripts 01 a 06 e use no `.env`:
   `DB_CONEXAO_TESTE="Server=tcp:localhost,1433;Initial Catalog=avalia;User ID=sa;Password=Teste#Local2026;Encrypt=True;TrustServerCertificate=True;"`
 
 Cobertura: autenticação, conta desativada e mensagem genérica; recuperação de senha (válido, expirado, reutilizado e pedido novo); visibilidade por perfil (professor fora da turma, aluno em simulado de outro, administrador em desempenho, CPF fora da listagem); desativação em cascata; sorteio (mínimo de 2 disciplinas, 10/15/20, sem repetição, só ativas de disciplinas ativas); correção (branco = erro, pontos = acertos × 10, pontuação = soma dos PontosObtidos); tentativa única (inclusive finalizações simultâneas); RN07, RN09 e RN11; gamificação.

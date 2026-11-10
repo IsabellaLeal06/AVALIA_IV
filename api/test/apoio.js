@@ -1,5 +1,5 @@
 // Apoio aos testes. Os testes de integração rodam SOMENTE no banco de TESTE informado em
-// DB_CONEXAO_TESTE (no .env ou no ambiente), carregado com os scripts 01 a 04 da pasta database.
+// DB_CONEXAO_TESTE (no .env ou no ambiente), carregado com os scripts 01 a 06 da pasta database (05 e 06 são opcionais: sem eles só os testes de banco.test.js são pulados).
 // Eles criam simulados, trocam senhas e desativam registros: nunca aponte para o banco de produção.
 const fs = require('fs');
 const path = require('path');
@@ -17,7 +17,7 @@ process.env.EMAIL_MODO = 'log';
 process.env.PASTA_UPLOADS = path.join(require('os').tmpdir(), 'avalia-testes-uploads');
 
 const temBanco = Boolean(conexaoTeste);
-const motivoPulo = temBanco ? false : 'defina DB_CONEXAO_TESTE (banco de teste com os scripts 01 a 04) para rodar os testes de integração';
+const motivoPulo = temBanco ? false : 'defina DB_CONEXAO_TESTE (banco de teste com os scripts 01 a 06) para rodar os testes de integração';
 
 const { criarApp } = require('../src/app');
 const banco = require('../src/config/banco');
