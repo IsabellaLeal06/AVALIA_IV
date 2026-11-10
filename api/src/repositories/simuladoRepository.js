@@ -171,10 +171,19 @@ const simuladoRepository = {
     );
   },
 
-  /** A pontuação só é incrementada, nunca reduzida (RN21). */
+  /**
+   * A pontuação só é incrementada, nunca reduzida (RN21).
+   * Quem soma é o trigger trg_ResultadoSimulado_AcumularPontuacao (script 06), ao gravar o resultado.
+   * A API só soma aqui se o trigger não existir ou estiver desabilitado, para nunca contar em dobro
+   * e continuar correta com o banco só nos scripts 01 a 04.
+   */
   async somarPontuacao(idUsuario, pontos, transacao) {
     await executar(
-      'UPDATE dbo.Usuario SET PontuacaoTotal_Usuario = PontuacaoTotal_Usuario + @Pontos WHERE Id_Usuario = @Id',
+      `IF NOT EXISTS (SELECT 1 FROM sys.triggers
+                       WHERE name = 'trg_ResultadoSimulado_AcumularPontuacao'
+                         AND parent_id = OBJECT_ID('dbo.ResultadoSimulado')
+                         AND is_disabled = 0)
+         UPDATE dbo.Usuario SET PontuacaoTotal_Usuario = PontuacaoTotal_Usuario + @Pontos WHERE Id_Usuario = @Id`,
       { Id: [sql.Int, idUsuario], Pontos: [sql.Int, pontos] },
       transacao
     );
