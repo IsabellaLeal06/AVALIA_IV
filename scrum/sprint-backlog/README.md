@@ -10,8 +10,7 @@ Esta pasta reúne os Sprint Backlogs do Avalia+: itens do Product Backlog seleci
 - [Sprint Backlog 4](./sprint-backlog-4.md)
 - [Sprint Backlog 5](./sprint-backlog-5.md)
 - [Sprint Backlog 6](./sprint-backlog-6.md)
-
-O documento da Sprint 7 ainda não aparece entre os arquivos desta pasta. Quando for criado, ele poderá ser adicionado a este índice.
+- [Sprint Backlog 7](./sprint-backlog-7.md)
 
 ## Orientações
 
