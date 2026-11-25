@@ -1,6 +1,6 @@
 # Gestão do Projeto — Avalia+ (PIM IV)
 
-Este documento registra como a equipe se comunicou durante o desenvolvimento do PIM IV e quais riscos foram identificados, avaliados e tratados ao longo do projeto. Complementa os artefatos do Scrum, reunidos na pasta [`scrum/`](../scrum/), e o [diagrama de rede](../diagramas/rede/diagrama-de-rede.md), que apresenta o caminho crítico do cronograma.
+Este documento registra como a equipe se comunicou durante o desenvolvimento do PIM IV e quais riscos foram identificados, avaliados e tratados ao longo do projeto. Complementa os artefatos do Scrum, reunidos na pasta [`scrum/`](../scrum/), e o [diagrama de rede](../diagramas/redes/diagrama-de-rede.md), que apresenta o caminho crítico do cronograma.
 
 ---
 
