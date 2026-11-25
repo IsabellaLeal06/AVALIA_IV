@@ -1,12 +1,4 @@
 
-
-
-
-
-
-
-
-
 <h1 align="center">
   <img src="./docs/assets/AVALIA +.svg" alt="Avalia+" width="300"/>
 </h1>
@@ -17,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Status-Conclu%C3%ADdo-brightgreen?style=flat-square"/>
   <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white"/>
@@ -57,8 +49,11 @@ No PIM IV a proposta evolui para uma solução completa: um banco de dados em SQ
 | 🧭 Gestão do projeto: comunicação e riscos | [Acessar](./docs/gestao-do-projeto.md) |
 | 🗄️ Banco de dados e scripts SQL | [Acessar](./database/) |
 | 📐 Diagramas do banco de dados | [Acessar](./diagramas/banco-de-dados/) |
+| 📖 Dicionário de dados | [Acessar](./diagramas/banco-de-dados/dicionario-de-dados.md) |
 | 📊 Diagramas UML | [Acessar](./diagramas/uml/) |
-| 🕸️ Diagrama de rede e caminho crítico | [Acessar](./diagramas/rede/diagrama-de-rede.md) |
+| 🖧 Diagrama de implantação | [Acessar](./diagramas/uml/diagrama-de-implantacao.png) |
+| 🧩 Diagrama de implementação | [Acessar](./diagramas/uml/diagrama-de-implementacao.png) |
+| 🕸️ Diagrama de rede e caminho crítico | [Acessar](./diagramas/redes/diagrama-de-rede.md) |
 | 📚 Documentação | [Acessar](./docs/) |
 | 📋 Product Backlog | [Acessar](./scrum/product-backlog/product-backlog.md) |
 | 📝 Sprint Backlog | [Acessar](./scrum/sprint-backlog/) |
@@ -68,10 +63,11 @@ No PIM IV a proposta evolui para uma solução completa: um banco de dados em SQ
 | 📅 Daily Scrum | [Acessar](./scrum/dailys/) |
 | 🌐 Aplicação Web | [Acessar](./web/) |
 | 🔌 API REST (Node + Express) | [Acessar](./api/) |
-| 📱 Aplicativo Mobile (Kotlin) | Em desenvolvimento · Sprint 7 |
+| 📱 Aplicativo Mobile (Kotlin) | [Acessar](./mobile/) |
 | 💻 Aplicação Desktop | [Acessar](./desktop/) |
 | ⚙️ Desktop Core | [Acessar](./desktop/Avalia.Desktop.Core/) |
-| 🔗 Desktop Data | [Acessar](./desktop/Avalia.Desktop.Data/) |
+| 🔗 Desktop API (cliente HTTP) | [Acessar](./desktop/Avalia.Desktop.Api/) |
+| 🧪 Desktop Testes | [Acessar](./desktop/Avalia.Desktop.Tests/) |
 | 🖥️ Interface Desktop | [Acessar](./desktop/Avalia.Desktop/) |
 | 📖 Metodologia Scrum | [Acessar](./docs/metodologia-scrum.md) |
 | 📑 Gerenciamento de Backlogs | [Acessar](./docs/gerenciamento-de-backlogs.md) |
