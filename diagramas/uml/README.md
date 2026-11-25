@@ -12,7 +12,7 @@ Esta pasta reúne os diagramas UML do Avalia+, elaborados na ferramenta **Astah*
 | [`diagrama-de-implantacao.png`](./diagrama-de-implantacao.png) | Diagrama de implantação (MD12), também em [SVG](./diagrama-de-implantacao.svg) |
 | [`diagrama-de-implementacao.png`](./diagrama-de-implementacao.png) | Diagrama de implementação, de componentes (MD13), também em [SVG](./diagrama-de-implementacao.svg) |
 
-Para abrir o arquivo `.asta`, use o [Astah](https://astah.net/) (há licença gratuita para estudantes). Os diagramas de implantação e de implementação foram feitos no Graphviz; os arquivos `.dot` são o código-fonte editável de cada um.
+Para abrir o arquivo `.asta`, use o [Astah](https://astah.net/) (há licença gratuita para estudantes). Os diagramas de implantação e de implementação foram feitos no Graphviz.
 
 ## Diagramas
 
