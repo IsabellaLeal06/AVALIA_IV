@@ -35,7 +35,7 @@ A ordem dos itens obedece a quatro critérios, aplicados nesta sequência:
 3. **Risco** — itens de maior incerteza técnica são antecipados, para que eventuais problemas apareçam com tempo hábil de correção.
 4. **Esforço** — entre itens equivalentes nos critérios anteriores, executa-se primeiro o de menor esforço.
 
-A sequência de dependências está representada graficamente no [diagrama de rede](../../diagramas/rede/diagrama-de-rede.md), que identifica o caminho crítico do projeto.
+A sequência de dependências está representada graficamente no [diagrama de rede](../../diagramas/redes/diagrama-de-rede.md), que identifica o caminho crítico do projeto.
 
 ---
 
@@ -186,7 +186,7 @@ Itens de gerenciamento que o manual cobra além dos artefatos do Scrum. Foram po
 Os dois documentos produzidos por este bloco são:
 
 - [`docs/gestao-do-projeto.md`](../../docs/gestao-do-projeto.md) — plano de comunicação e gerenciamento de riscos;
-- [`diagramas/rede/diagrama-de-rede.md`](../../diagramas/rede/diagrama-de-rede.md) — diagrama de rede pelo Método do Caminho Crítico.
+- [`diagramas/rede/diagrama-de-rede.md`](../../diagramas/redes/diagrama-de-rede.md) — diagrama de rede pelo Método do Caminho Crítico.
 
 ---
 
