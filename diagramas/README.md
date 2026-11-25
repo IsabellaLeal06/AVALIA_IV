@@ -5,8 +5,8 @@ Esta pasta reúne os diagramas utilizados para representar a estrutura, o funcio
 ## Organização
 
 - `banco-de-dados/`: diagramas relacionados à modelagem do banco de dados.
-- `uml/`: diagramas UML utilizados na representação do sistema.
-- `rede/`: diagrama de rede do projeto, com o caminho crítico do cronograma.
+- `uml/`: diagramas UML do sistema: casos de uso, classes e sequência (arquivo Astah), implantação e implementação.
+- `redes/`: diagrama de rede do projeto, com o caminho crítico do cronograma.
 
 ## Objetivo
 
