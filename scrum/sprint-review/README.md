@@ -9,8 +9,8 @@ Esta pasta reúne os registros de Sprint Review disponíveis no repositório. As
 - [Sprint Review 3](./sprint-review-3.md)
 - [Sprint Review 4](./sprint-review-4.md)
 - [Sprint Review 5](./sprint-review-5.md)
-
-As reviews das Sprints 6 e 7 ainda não aparecem entre os arquivos desta pasta. Inclua-as neste índice quando forem criadas.
+- [Sprint Review 6](./sprint-review-6.md)
+- [Sprint Review 7](./sprint-review-7.md)
 
 ## O que registrar
 
