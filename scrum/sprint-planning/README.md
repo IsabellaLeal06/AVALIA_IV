@@ -7,7 +7,7 @@ Esta pasta reúne os planejamentos das sprints do Avalia+. Cada planejamento reg
 | Sprint | Período | Foco | Documento |
 |---|---|---|---|
 | Sprint 1 | 18/08 – 29/08/2026 | Requisitos, regras de negócio e repositório | [Sprint 1 Planning](./sprint-planning-1.md) |
-| Sprint 2 | 01/09 – 12/09/2026 | Modelagem e documentos do banco de dados | [Sprint 2 Planning](./sprint-planning=2.md) |
+| Sprint 2 | 01/09 – 12/09/2026 | Modelagem e documentos do banco de dados | [Sprint 2 Planning](./sprint-planning-2.md) |
 | Sprint 3 | 15/09 – 26/09/2026 | Banco físico, API e autenticação | [Sprint 3 Planning](./sprint-planning-3.md) |
 | Sprint 4 | 29/09 – 10/10/2026 | Cadastros e banco de questões | [Sprint 4 Planning](./sprint-planning-4.md) |
 | Sprint 5 | 13/10 – 24/10/2026 | Simulados, correção e desempenho | [Sprint 5 Planning](./sprint-planning-5.md) |
